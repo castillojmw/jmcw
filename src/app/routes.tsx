@@ -1,14 +1,14 @@
-import { createBrowserRouter } from 'react-router-dom';
-import App from '../App';
-import HomePage from '../pages/Home/Home';
-import MenusPage from '../pages/Menus';
-import GalleryPage from '../pages/Gallery';
-import AboutPage from '../pages/About';
-import ContactPage from '../pages/Contact';
+import { createBrowserRouter } from "react-router-dom";
+import App from "../App";
+import HomePage from "../pages/Home/Home";
+import MenusPage from "../pages/Menus";
+import GalleryPage from "../pages/Gallery";
+import AboutPage from "../pages/About";
+import ContactPage from "../pages/Contact";
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/jmcw",
     element: <App />,
     children: [
       {
@@ -16,19 +16,19 @@ const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        path: '/menus',
+        path: "menus",
         element: <MenusPage />,
       },
       {
-        path: '/gallery',
+        path: "gallery",
         element: <GalleryPage />,
       },
       {
-        path: '/about',
+        path: "about",
         element: <AboutPage />,
       },
       {
-        path: '/contact',
+        path: "contact",
         element: <ContactPage />,
       },
     ],
