@@ -3,7 +3,6 @@ import styles from "./Header.module.scss";
 import { Flex } from "../core/Flex/Flex";
 import { useMediaQuery } from "react-responsive";
 import { BREAKPOINTS } from "../../utils/breakpoints";
-import clsx from "clsx";
 
 export default function Header() {
   const isMobile = useMediaQuery({
