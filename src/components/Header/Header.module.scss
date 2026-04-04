@@ -1,0 +1,28 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  min-height: 4rem;
+  display: flex;
+  align-items: center;
+}
+
+.nav {
+  padding-left: 4rem;
+}
+
+.navMobile {
+  padding-left: 1rem;
+}
+
+.navLink {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navLink a:hover {
+  color: red;
+}

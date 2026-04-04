@@ -1,0 +1,13 @@
+.background {
+    position: absolute;
+    z-index: 0;
+}
+
+.content {
+    z-index: 1;
+    position: relative;
+}
+
+.container {
+    position: relative;
+}
