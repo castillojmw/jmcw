@@ -4,7 +4,7 @@ import path from "path";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: process.env.NODE_ENV === 'production' ? '/jmcw/' : '/',
+  base: '/jmcw/',
   server: {
     host: "0.0.0.0",
     allowedHosts: ["localhost", "wide-socks-wink.loca.lt"],
