@@ -13,11 +13,11 @@ export default function Header() {
   const activeNav = location.pathname;
 
   const navLinks = [
-    { to: "/", label: "Home" },
-    { to: "/gallery", label: "Gallery" },
-    { to: "/menus", label: "Sample Menus" },
-    { to: "/about", label: "About" },
-    { to: "/contact", label: "Contact" },
+    { to: "/jmcw/", label: "Home" },
+    { to: "/jmcw/gallery", label: "Gallery" },
+    { to: "/jmcw/menus", label: "Sample Menus" },
+    { to: "/jmcw/about", label: "About" },
+    { to: "/jmcw/contact", label: "Contact" },
   ];
 
   return (
