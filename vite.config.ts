@@ -4,10 +4,10 @@ import path from "path";
 
 // https://vite.dev/config
 export default defineConfig({
-  base: "https://castillojmw.github.io/",
+  base: "/jmcw/",
   server: {
-    host: true,
-    // allowedHosts: ["localhost", "castillojmw.github.io/jmcw/"],
+    host: "0.0.0.0",
+    allowedHosts: ["localhost"],
   },
   plugins: [react()],
   resolve: {
