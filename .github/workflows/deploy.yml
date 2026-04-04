@@ -22,7 +22,10 @@ jobs:
           cache: "pnpm"
 
       - name: Install pnpm
-        run: npm install -g pnpm
+        run: npm install -g pnpm@10
+
+      - name: Setup PATH for pnpm
+        run: echo "$HOME/.npm/bin" >> $GITHUB_PATH
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
