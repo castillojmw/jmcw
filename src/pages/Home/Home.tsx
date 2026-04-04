@@ -3,7 +3,6 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { Layered } from "../../components/Layered";
 import { Flex } from "../../components/core/Flex/Flex";
-import { Link } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import { BREAKPOINTS } from "../../utils/breakpoints";
 import { Typography } from "../../components/core/Typography/Typography";
@@ -38,6 +37,7 @@ import ABOUT_IMG from "./assets/about.png";
 
 // Styling
 import styles from "./Home.module.scss";
+import { Card, type CardProps } from "../../components/Card/Card";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -101,23 +101,23 @@ export default function HomePage() {
     }
   };
 
-  const items = [
+  const cards: CardProps[] = [
     {
       label: "Menu Development",
       desc: "Seasonal menus rooted in cultrual heritage with a focus on bold flavors, respectful tradition, and personal expression.",
-      to: "/menus",
+      to: "/jmcw/menus",
       img: SAMPLE_MENUS_IMG,
     },
     {
       label: "Dining exhibition",
       desc: "An archive of moments across three worlds: the comfort of home kitchen, the intimacy of private dining, the precision of fine dining. Each dish, a story.",
-      to: "/gallery",
+      to: "/jmcw/gallery",
       img: GALLERY_IMG,
     },
     {
       label: "Culinary journey",
       desc: "A chef whose palate and discipline were forged in elite kitchens, now refined at The Balmoral's French brasserie. At private events, that foundation becomes connection, food designed as a conversation between my cultural roots and the people gathered at the table.",
-      to: "/about",
+      to: "/jmcw/about",
       img: ABOUT_IMG,
     },
   ];
@@ -177,52 +177,9 @@ export default function HomePage() {
         className="w-100"
       >
         <Flex.Container direction="column" justify="center" align="center">
-          <div
-            ref={containerRef}
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              flexWrap: "wrap",
-              justifyContent: "center",
-              gap: "4rem",
-            }}
-          >
-            {items.map(({ to, label, img, desc }) => (
-              <Flex.Container
-                direction="column"
-                justify="center"
-                className={"core-fade-in"}
-                style={{
-                  overflow: "hidden",
-                  maxWidth: "400px",
-                }}
-                gap="2rem"
-              >
-                <Link to={to}>
-                  <img className={styles.cardImg} src={img} />
-                </Link>
-                <Typography.Body level={1}>{label}</Typography.Body>
-                <p
-                  style={{
-                    fontSize: "1rem",
-                    textWrap: "pretty",
-                    height: "130px",
-                  }}
-                >
-                  {desc}
-                </p>
-                <a
-                  href={to}
-                  style={{
-                    fontSize: "0.8rem",
-                    textDecoration: "underline",
-                    color: "white",
-                    marginTop: "-2rem",
-                  }}
-                >
-                  Find out more here
-                </a>
-              </Flex.Container>
+          <div ref={containerRef} className={styles.cardContainer}>
+            {cards.map((item) => (
+              <Card {...item} key={item.to} />
             ))}
           </div>
         </Flex.Container>

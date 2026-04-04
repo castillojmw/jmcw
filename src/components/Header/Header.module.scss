@@ -7,14 +7,23 @@
   min-height: 4rem;
   display: flex;
   align-items: center;
+  backdrop-filter: blur(5px);
+}
+
+@media (--screen-md) {
+  .header {
+    backdrop-filter: blur(0px);
+  }
 }
 
 .nav {
-  padding-left: 4rem;
+  padding-left: 1rem;
 }
 
-.navMobile {
-  padding-left: 1rem;
+@media (--screen-md) {
+  .nav {
+    padding-left: 4rem;
+  }
 }
 
 .navLink {

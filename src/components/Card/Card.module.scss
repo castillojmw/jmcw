@@ -1,0 +1,15 @@
+.cardImg {
+  max-width: 100%;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.cardImg:hover {
+  opacity: 0.5;
+}
+
+@media (--screen-md) {
+  .cardDesc {
+    height: 130px;
+  }
+}

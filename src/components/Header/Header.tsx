@@ -22,12 +22,7 @@ export default function Header() {
 
   return (
     <header className={styles.header}>
-      <nav
-        className={clsx({
-          [styles.nav]: !isMobile,
-          [styles.navMobile]: isMobile,
-        })}
-      >
+      <nav className={styles.nav}>
         <Flex.Container direction="row" gap={isMobile ? "1rem" : "2.5rem"}>
           {navLinks.map((link) => (
             <Flex.Container direction="column">
