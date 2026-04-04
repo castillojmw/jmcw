@@ -16,19 +16,19 @@ const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        path: "menus",
+        path: "/jmcw/menus",
         element: <MenusPage />,
       },
       {
-        path: "gallery",
+        path: "/jmcw/gallery",
         element: <GalleryPage />,
       },
       {
-        path: "about",
+        path: "/jmcw/about",
         element: <AboutPage />,
       },
       {
-        path: "contact",
+        path: "/jmcw/contact",
         element: <ContactPage />,
       },
     ],
