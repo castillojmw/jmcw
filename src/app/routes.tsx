@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import HomePage from "../pages/Home/Home";
 import MenusPage from "../pages/Menus/Menus";
-import AboutPage from "../pages/About";
+import AboutPage from "../pages/About/About";
 import ContactPage from "../pages/Contact";
 import GalleryPage from "../pages/Gallery/Gallery";
 
