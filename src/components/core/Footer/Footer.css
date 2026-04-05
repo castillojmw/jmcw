@@ -41,7 +41,7 @@
 }
 
 .footer-email {
-  color: #c5a466;
+  color: var(--color-content-secondary);
   font-size: 1rem;
   cursor: pointer;
   transition: color 0.3s ease;

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Header from "../components/Header/Header";
-import Footer from "../components/Footer";
+import Footer from "../components/core/Footer/Footer";
 import "./About.css";
 
 export default function AboutPage() {

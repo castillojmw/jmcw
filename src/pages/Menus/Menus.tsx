@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer";
+import Footer from "../../components/core/Footer/Footer";
 import { Hero } from "../../sections/Hero/Hero";
 import { Flex } from "../../components/core/Flex/Flex";
 import { Card } from "../../components/Card/Card";

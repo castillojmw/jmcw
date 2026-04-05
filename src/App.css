@@ -3,7 +3,9 @@
   background: #1f1f1f;
 
   --color-text-primary: white;
+  --color-text-secondary: rgb(160, 160, 160);
   --color-content-primary: #1f1f1f;
+  --color-content-secondary: #7fa3a0;
 }
 
 /* Scrollbar styling */

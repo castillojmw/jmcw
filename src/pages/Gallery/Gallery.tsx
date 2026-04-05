@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 
 import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer";
+import Footer from "../../components/core/Footer/Footer";
 import { Card } from "../../components/Card/Card";
 import { ImageModal } from "../../components/ImageModal/ImageModal";
 
@@ -53,11 +53,7 @@ export default function GalleryPage() {
               key={src}
               label={`Photo ${index + 1}`}
               img={
-                <img
-                  className={styles.galleryCard}
-                  src={src}
-                  loading="lazy"
-                />
+                <img className={styles.galleryCard} src={src} loading="lazy" />
               }
               onClick={() => setSelectedImage(src)}
               showLabelOnCard={false}

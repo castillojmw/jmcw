@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import Header from "../components/Header/Header";
-import Footer from "../components/Footer";
+import Footer from "../components/core/Footer/Footer";
 import "./Contact.css";
 
 export default function ContactPage() {

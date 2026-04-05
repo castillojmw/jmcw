@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/all";
 import { Flex } from "../../components/core/Flex/Flex";
 
 import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer";
+import Footer from "../../components/core/Footer/Footer";
 
 // Chevron SVG component
 const ChevronDownIcon = () => (
