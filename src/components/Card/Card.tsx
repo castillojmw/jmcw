@@ -13,10 +13,12 @@ export type CardProps = {
   className?: string;
   onClick?: () => void;
   showLabelOnCard?: boolean;
+  maxWidth?: string;
+  style?: React.CSSProperties;
 };
 
 export const Card = (props: CardProps) => {
-  const { label, img, className, onClick, showLabelOnCard = true } = props;
+  const { label, img, className, onClick, showLabelOnCard = true, maxWidth = "400px", style } = props;
 
   const ImageWrapper = onClick ? (
     <button
@@ -26,8 +28,7 @@ export const Card = (props: CardProps) => {
         border: "none",
         padding: 0,
         cursor: "pointer",
-        display: "block",
-        width: "100%",
+        display: "contents",
       }}
     >
       {img}
@@ -45,7 +46,8 @@ export const Card = (props: CardProps) => {
       className={`core-fade-in ${className ?? ""}`}
       style={{
         overflow: "hidden",
-        maxWidth: "400px",
+        maxWidth,
+        ...style,
       }}
       gap="1rem"
     >

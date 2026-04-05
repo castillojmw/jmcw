@@ -45,7 +45,10 @@ type Menus = "Kultura" | "Hanguk";
 export default function MenusPage() {
   const [menu, setMenu] = useState<Menus>("Kultura");
   const [imageList, setImageList] = useState(generateImageList(KULTURA_IMAGES));
-  const [selectedImage, setSelectedImage] = useState<{ src: string; label: string } | null>(null);
+  const [selectedImage, setSelectedImage] = useState<{
+    src: string;
+    label: string;
+  } | null>(null);
   const menuSectionRef = useRef<HTMLDivElement>(null);
 
   const handleMenuChange = (menu: Menus) => {
@@ -107,7 +110,7 @@ export default function MenusPage() {
           >
             {menu === "Kultura" ? (
               <Flex.Container direction="column">
-                <Typography.Heading level={1}>Kultura</Typography.Heading>
+                <Typography.Heading level={2}>Kultura</Typography.Heading>
                 <div
                   style={{
                     width: "100%",
@@ -126,7 +129,7 @@ export default function MenusPage() {
           >
             {menu === "Hanguk" ? (
               <Flex.Container direction="column">
-                <Typography.Heading level={1}>Hanguk</Typography.Heading>
+                <Typography.Heading level={2}>Hanguk</Typography.Heading>
                 <div
                   style={{
                     width: "100%",
@@ -185,30 +188,14 @@ export default function MenusPage() {
               }
             />
           </Flex.Container>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gridColumnGap: "2rem",
-              gridRowGap: "2rem",
-              width: "fit-content",
-            }}
-          >
+          <div className={styles.dishGrid}>
             {imageList.map((image, index) => (
               <Card
                 key={image}
                 showLabelOnCard={false}
                 label={`${menu} Dish ${index + 1}`}
                 img={
-                  <img
-                    style={{
-                      aspectRatio: "1/1",
-                      width: "100%",
-                      objectFit: "cover",
-                    }}
-                    src={image}
-                    loading="lazy"
-                  />
+                  <img className={styles.dishCard} src={image} loading="lazy" />
                 }
                 onClick={() =>
                   setSelectedImage({

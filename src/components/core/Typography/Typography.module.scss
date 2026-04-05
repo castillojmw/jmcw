@@ -9,31 +9,101 @@ h6 {
   font-weight: 400;
 }
 
-.headingH3 {
+.headingH1 {
   font-size: 2rem;
 }
 
-@media (--screen-md) {
-  .headingH3 {
-    font-size: 3rem;
-  }
+.headingH2 {
+  font-size: 1.75rem;
+}
+
+.headingH3 {
+  font-size: 1.5rem;
+}
+
+.headingH4 {
+  font-size: 1.25rem;
+}
+
+.headingH5 {
+  font-size: 1rem;
+}
+
+.headingH6 {
+  font-size: 0.875rem;
 }
 
 @media (--screen-xs) {
   .headingH1 {
     font-size: 3rem;
   }
+
+  .headingH2 {
+    font-size: 2.25rem;
+  }
+
+  .headingH3 {
+    font-size: 1.875rem;
+  }
+
+  .headingH4 {
+    font-size: 1.5rem;
+  }
+
+  .headingH5 {
+    font-size: 1.125rem;
+  }
 }
 
 @media (--screen-sm) {
   .headingH1 {
-    font-size: 5rem;
+    font-size: 4rem;
+  }
+
+  .headingH2 {
+    font-size: 3rem;
+  }
+
+  .headingH3 {
+    font-size: 2.25rem;
+  }
+
+  .headingH4 {
+    font-size: 1.75rem;
+  }
+
+  .headingH5 {
+    font-size: 1.375rem;
+  }
+
+  .headingH6 {
+    font-size: 1.125rem;
   }
 }
 
 @media (--screen-md) {
   .headingH1 {
     font-size: 5rem;
+  }
+
+  .headingH2 {
+    font-size: 3.5rem;
+  }
+
+  .headingH3 {
+    font-size: 2.5rem;
+  }
+
+  .headingH4 {
+    font-size: 2rem;
+  }
+
+  .headingH5 {
+    font-size: 1.5rem;
+  }
+
+  .headingH6 {
+    font-size: 1.25rem;
   }
 }
 

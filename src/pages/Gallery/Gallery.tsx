@@ -53,10 +53,15 @@ export default function GalleryPage() {
               key={src}
               label={`Photo ${index + 1}`}
               img={
-                <img className={styles.galleryCard} src={src} loading="lazy" />
+                <img
+                  className={styles.galleryCard}
+                  src={src}
+                  loading="lazy"
+                />
               }
               onClick={() => setSelectedImage(src)}
               showLabelOnCard={false}
+              maxWidth="100%"
             />
           ))}
         </div>

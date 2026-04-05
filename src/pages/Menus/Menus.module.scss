@@ -56,3 +56,27 @@
     width: 30%;
   }
 }
+
+.dishGrid {
+  column-count: 1;
+  column-gap: 2rem;
+}
+
+@media (--screen-xs) {
+  .dishGrid {
+    column-count: 2;
+  }
+}
+
+@media (--screen-md) {
+  .dishGrid {
+    column-count: 2;
+  }
+}
+
+.dishCard {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 2rem;
+}
