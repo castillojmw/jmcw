@@ -1,0 +1,31 @@
+.hero {
+  height: 100vh;
+  height: 100svh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 16rem;
+}
+
+.layerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.layerBackground {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  opacity: 0.2;
+}
+
+.layerContent {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+}

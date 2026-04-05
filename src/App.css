@@ -49,3 +49,7 @@ a, button, .btn, .nav-link, .filter-btn, .social-btn {
 .core-fade-in {
   animation: fadeIn 5s;
 }
+
+.core-overflow-hidden {
+  overflow: hidden
+}

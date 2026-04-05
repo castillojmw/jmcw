@@ -61,6 +61,16 @@ html {
   scroll-behavior: smooth;
 }
 
+/* To be used in every section */
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  margin-bottom: 16rem;
+}
+
 @custom-media --screen-xs (max-width: 480px);
 @custom-media --screen-sm (min-width: 768px);
 @custom-media --screen-md (max-width: 1000px);
