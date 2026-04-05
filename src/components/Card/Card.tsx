@@ -12,10 +12,11 @@ export type CardProps = {
   desc?: string;
   className?: string;
   onClick?: () => void;
+  showLabelOnCard?: boolean;
 };
 
 export const Card = (props: CardProps) => {
-  const { label, img, className, onClick } = props;
+  const { label, img, className, onClick, showLabelOnCard = true } = props;
 
   const ImageWrapper = onClick ? (
     <button
@@ -49,19 +50,21 @@ export const Card = (props: CardProps) => {
       gap="1rem"
     >
       {ImageWrapper}
-      <Flex.Container direction="column" gap="1rem">
-        <Typography.Body level={1}>{label}</Typography.Body>
-        {props.desc && (
-          <p
-            style={{
-              textWrap: "pretty",
-            }}
-            className={styles.cardDesc}
-          >
-            {props.desc}
-          </p>
-        )}
-      </Flex.Container>
+      {showLabelOnCard && (
+        <Flex.Container direction="column" gap="1rem">
+          <Typography.Body level={1}>{label}</Typography.Body>
+          {props.desc && (
+            <p
+              style={{
+                textWrap: "pretty",
+              }}
+              className={styles.cardDesc}
+            >
+              {props.desc}
+            </p>
+          )}
+        </Flex.Container>
+      )}
       {props.to && (
         <a
           href={props.to}

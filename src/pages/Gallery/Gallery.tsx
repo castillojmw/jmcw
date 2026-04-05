@@ -1,7 +1,9 @@
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer";
+import { Card } from "../../components/Card/Card";
+import { ImageModal } from "../../components/ImageModal/ImageModal";
 
 import styles from "./Gallery.module.scss";
 import { Hero } from "../../sections/Hero/Hero";
@@ -9,6 +11,8 @@ import { Hero } from "../../sections/Hero/Hero";
 export type ViteGlobModule = { default: string };
 
 export default function GalleryPage() {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   const images = import.meta.glob<ViteGlobModule>(
     "./assets/compressed_images/thumbs/*.jpg",
     {
@@ -44,13 +48,26 @@ export default function GalleryPage() {
 
       <section className="section">
         <div className={styles.galleryContainer}>
-          {imageList.map((src) => (
-            <div className="core-overflow-hidden">
-              <img className={styles.galleryCard} src={src} loading="lazy" />
-            </div>
+          {imageList.map((src, index) => (
+            <Card
+              key={src}
+              label={`Photo ${index + 1}`}
+              img={
+                <img className={styles.galleryCard} src={src} loading="lazy" />
+              }
+              onClick={() => setSelectedImage(src)}
+              showLabelOnCard={false}
+            />
           ))}
         </div>
       </section>
+
+      <ImageModal
+        isOpen={!!selectedImage}
+        onClose={() => setSelectedImage(null)}
+        src={selectedImage ?? ""}
+        label={""}
+      />
 
       <Footer />
     </div>

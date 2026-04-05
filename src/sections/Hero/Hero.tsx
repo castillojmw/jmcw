@@ -7,7 +7,7 @@ import { Typography } from "../../components/core/Typography/Typography";
 
 // Hero Assets
 import HERO_BACKGROUND_IMG from "./assets/hero.jpg";
-import HERO_BACKGROUND_IMG_MOBILE from "./assets/mobile-hero.png";
+import HERO_BACKGROUND_IMG_MOBILE from "./assets/mobile-hero.jpg";
 
 type HeroProps = {
   heading?: string;

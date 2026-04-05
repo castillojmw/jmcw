@@ -24,9 +24,9 @@ const ChevronDownIcon = () => (
 );
 
 // Card Assets
-import SAMPLE_MENUS_IMG from "./assets/sample-menus.png";
-import GALLERY_IMG from "./assets/gallery.png";
-import ABOUT_IMG from "./assets/about.png";
+import SAMPLE_MENUS_IMG from "./assets/sample-menus.jpg";
+import GALLERY_IMG from "./assets/gallery.jpg";
+import ABOUT_IMG from "./assets/about.jpg";
 
 // Styling
 import styles from "./Home.module.scss";

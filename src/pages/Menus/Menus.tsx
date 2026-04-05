@@ -5,6 +5,7 @@ import { Hero } from "../../sections/Hero/Hero";
 import { Flex } from "../../components/core/Flex/Flex";
 import { Card } from "../../components/Card/Card";
 import { Typography } from "../../components/core/Typography/Typography";
+import { ImageModal } from "../../components/ImageModal/ImageModal";
 
 import KULTURA_IMG from "./assets/kultura.webp";
 import KULTURA_MENU from "./assets/kultura/menu-classic.png";
@@ -44,6 +45,7 @@ type Menus = "Kultura" | "Hanguk";
 export default function MenusPage() {
   const [menu, setMenu] = useState<Menus>("Kultura");
   const [imageList, setImageList] = useState(generateImageList(KULTURA_IMAGES));
+  const [selectedImage, setSelectedImage] = useState<{ src: string; label: string } | null>(null);
   const menuSectionRef = useRef<HTMLDivElement>(null);
 
   const handleMenuChange = (menu: Menus) => {
@@ -152,20 +154,34 @@ export default function MenusPage() {
           >
             <Card
               label="Classic Menu"
+              showLabelOnCard={false}
               img={
                 <img
                   className={styles.cardImg}
                   src={menu === "Kultura" ? KULTURA_MENU : HANGUK_MENU}
                 />
               }
+              onClick={() =>
+                setSelectedImage({
+                  src: menu === "Kultura" ? KULTURA_MENU : HANGUK_MENU,
+                  label: "Classic Menu",
+                })
+              }
             />
             <Card
               label="Vegetarian Menu"
+              showLabelOnCard={false}
               img={
                 <img
                   className={styles.cardImg}
                   src={menu === "Kultura" ? KULTURA_MENU_VG : HANGUK_MENU_VG}
                 />
+              }
+              onClick={() =>
+                setSelectedImage({
+                  src: menu === "Kultura" ? KULTURA_MENU_VG : HANGUK_MENU_VG,
+                  label: "Vegetarian Menu",
+                })
               }
             />
           </Flex.Container>
@@ -178,23 +194,40 @@ export default function MenusPage() {
               width: "fit-content",
             }}
           >
-            {imageList.map((image) => (
-              <div className="core-overflow-hidden">
-                <img
-                  style={{
-                    aspectRatio: "1/1",
-                    width: "100%",
-                    objectFit: "cover",
-                  }}
-                  src={image}
-                  key={image}
-                  loading="lazy"
-                />
-              </div>
+            {imageList.map((image, index) => (
+              <Card
+                key={image}
+                showLabelOnCard={false}
+                label={`${menu} Dish ${index + 1}`}
+                img={
+                  <img
+                    style={{
+                      aspectRatio: "1/1",
+                      width: "100%",
+                      objectFit: "cover",
+                    }}
+                    src={image}
+                    loading="lazy"
+                  />
+                }
+                onClick={() =>
+                  setSelectedImage({
+                    src: image,
+                    label: `${menu} Dish ${index + 1}`,
+                  })
+                }
+              />
             ))}
           </div>
         </Flex.Container>
       </section>
+
+      <ImageModal
+        isOpen={!!selectedImage}
+        onClose={() => setSelectedImage(null)}
+        src={selectedImage?.src ?? ""}
+        label={selectedImage?.label ?? ""}
+      />
 
       <Footer />
     </div>
