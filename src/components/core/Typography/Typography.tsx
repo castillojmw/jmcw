@@ -13,7 +13,7 @@ const Heading = (props: HeadingProps) => {
   return match(props)
     .with({ level: 1 }, () => <h1 className={styles.headingH1}>{children}</h1>)
     .with({ level: 2 }, () => <h2 className="heading-h2">{children}</h2>)
-    .with({ level: 3 }, () => <h3 className="heading-h3">{children}</h3>)
+    .with({ level: 3 }, () => <h3 className={styles.headingH3}>{children}</h3>)
     .with({ level: 4 }, () => <h4 className="heading-h4">{children}</h4>)
     .with({ level: 5 }, () => <h5 className="heading-h5">{children}</h5>)
     .with({ level: 6 }, () => <h6 className="heading-h6">{children}</h6>)

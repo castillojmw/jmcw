@@ -10,18 +10,38 @@ export type CardProps = {
   label: string;
   img: ReactNode;
   desc?: string;
+  className?: string;
+  onClick?: () => void;
 };
 
 export const Card = (props: CardProps) => {
-  const { label, img } = props;
+  const { label, img, className, onClick } = props;
 
-  const ImageWrapper = props.to ? <Link to={props.to}>{img}</Link> : img;
+  const ImageWrapper = onClick ? (
+    <button
+      onClick={onClick}
+      style={{
+        background: "none",
+        border: "none",
+        padding: 0,
+        cursor: "pointer",
+        display: "block",
+        width: "100%",
+      }}
+    >
+      {img}
+    </button>
+  ) : props.to ? (
+    <Link to={props.to}>{img}</Link>
+  ) : (
+    img
+  );
 
   return (
     <Flex.Container
       direction="column"
       justify="center"
-      className={"core-fade-in"}
+      className={`core-fade-in ${className ?? ""}`}
       style={{
         overflow: "hidden",
         maxWidth: "400px",

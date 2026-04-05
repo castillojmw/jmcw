@@ -4,6 +4,55 @@
   transition: opacity 0.3s ease;
 }
 
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 2rem;
+  column-gap: 2rem;
+}
+
+@media (--screen-md) {
+  .heroGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.heroCard {
+  width: 250px;
+}
+
+@media (--screen-xs) {
+  .heroCard {
+    width: 300px;
+  }
+}
+
+@media (--screen-md) {
+  .heroCard {
+    width: 400px;
+  }
+}
+
 .cardImg:hover {
   opacity: 0.5;
+}
+
+.menuBody {
+  flex-direction: column;
+}
+
+@media (--screen-md) {
+  .menuBody {
+    flex-direction: row;
+  }
+}
+
+.menuContainer {
+  width: 100%;
+}
+
+@media (--screen-md) {
+  .menuContainer {
+    width: 30%;
+  }
 }
