@@ -41,10 +41,10 @@ export default function ContactPage() {
                 <div className="detail-item">
                   <h4 className="detail-title">Email</h4>
                   <a
-                    href="mailto:jasmine@jasminecastillo.com"
+                    href="mailto:castillojmw.ph@gmail.com"
                     className="detail-value"
                   >
-                    jasmine@jasminecastillo.com
+                    castillojmw.ph@gmail.com
                   </a>
                 </div>
 

@@ -37,9 +37,15 @@ export default function Footer() {
 
           <div className={styles.footerSection}>
             <Typography.Heading level={6}>Inquire</Typography.Heading>
-            <Typography.Body level={5} className={styles.footerLinks}>
-              jasmine@jasminecastillo.com
-            </Typography.Body>
+            <a
+              href="mailto:castillojmw.ph@gmail.com"
+              className={styles.emailIcon}
+              aria-label="Send email"
+            >
+              <Typography.Body level={5} className={styles.footerLinks}>
+                castillojmw.ph@gmail.com
+              </Typography.Body>
+            </a>
           </div>
         </div>
       </div>

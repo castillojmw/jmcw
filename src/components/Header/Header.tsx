@@ -7,7 +7,7 @@ import clsx from "clsx";
 
 const mail = (
   <a
-    href="mailto:jasmine@jasminecastillo.com"
+    href="mailto:castillojmw.ph@gmail.com"
     className={styles.emailIcon}
     aria-label="Send email"
   >
