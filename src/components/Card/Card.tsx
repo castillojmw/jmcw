@@ -4,8 +4,10 @@ import { Typography } from "../core/Typography/Typography";
 
 import styles from "./Card.module.scss";
 import type { ReactNode } from "react";
+import clsx from "clsx";
 
 export type CardProps = {
+  variant?: "default" | "textbox";
   to?: string;
   label: string;
   img: ReactNode;
@@ -18,7 +20,16 @@ export type CardProps = {
 };
 
 export const Card = (props: CardProps) => {
-  const { label, img, className, onClick, showLabelOnCard = true, maxWidth = "400px", style } = props;
+  const {
+    label,
+    img,
+    className,
+    onClick,
+    showLabelOnCard = true,
+    maxWidth = "400px",
+    style,
+    variant = "default",
+  } = props;
 
   const ImageWrapper = onClick ? (
     <button
@@ -49,22 +60,22 @@ export const Card = (props: CardProps) => {
         maxWidth,
         ...style,
       }}
-      gap="1rem"
+      gap={variant === "default" ? "1rem" : "0rem"}
     >
       {ImageWrapper}
       {showLabelOnCard && (
-        <Flex.Container direction="column" gap="1rem">
-          <Typography.Body level={1}>{label}</Typography.Body>
-          {props.desc && (
-            <p
-              style={{
-                textWrap: "pretty",
-              }}
-              className={styles.cardDesc}
-            >
-              {props.desc}
-            </p>
-          )}
+        <Flex.Container
+          className={clsx({
+            [styles.defaultLabel]: variant === "default",
+            [styles.textboxLabel]: variant === "textbox",
+          })}
+          direction="column"
+          gap="1rem"
+        >
+          <Typography.Body level={variant === "default" ? 1 : 3}>
+            {label}
+          </Typography.Body>
+          {props.desc && <p className={styles.cardDesc}>{props.desc}</p>}
         </Flex.Container>
       )}
       {props.to && (

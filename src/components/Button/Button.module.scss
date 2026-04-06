@@ -1,0 +1,24 @@
+.button,
+button,
+input[type="submit"],
+input[type="reset"] {
+  cursor: pointer;
+  border-radius: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  border: none;
+}
+
+.primaryButton {
+  background: var(--color-content-primary);
+}
+
+.primaryButton:hover {
+  opacity: 0.9;
+}
+
+.tertiaryButton {
+  background-color: transparent;
+}

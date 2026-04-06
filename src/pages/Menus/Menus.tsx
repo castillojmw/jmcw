@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import gsap from "gsap";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/core/Footer/Footer";
 import { Hero } from "../../sections/Hero/Hero";
@@ -17,6 +18,9 @@ import HANGUK_MENU_VG from "./assets/hanguk/menu-vegetarian.png";
 
 import styles from "./Menus.module.scss";
 import type { ViteGlobModule } from "../Gallery/Gallery";
+import { ScrollTrigger } from "gsap/all";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const KULTURA_IMAGES = import.meta.glob<ViteGlobModule>(
   "./assets/kultura/eg/*.jpg",
@@ -40,6 +44,9 @@ const MenuMap: Record<Menus, Record<string, ViteGlobModule>> = {
 const generateImageList = (images: Record<string, ViteGlobModule>) =>
   Object.entries(images).map(([, mod]) => mod.default);
 
+const UNSELECTED_HEADING_LEVEL = 4;
+const SELECTED_HEADING_LEVEL = 3;
+
 type Menus = "Kultura" | "Hanguk";
 
 export default function MenusPage() {
@@ -49,7 +56,10 @@ export default function MenusPage() {
     src: string;
     label: string;
   } | null>(null);
+  const [headerBlurred, setHeaderBlurred] = useState(false);
   const menuSectionRef = useRef<HTMLDivElement>(null);
+  const heroGridRef = useRef<HTMLDivElement>(null);
+  const heroRef = useRef<HTMLDivElement>(null);
 
   const handleMenuChange = (menu: Menus) => {
     setMenu(menu);
@@ -61,162 +71,212 @@ export default function MenusPage() {
     window.scrollTo(0, 0);
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (heroRef.current) {
+        const heroBottom = heroRef.current.getBoundingClientRect().bottom;
+        setHeaderBlurred(heroBottom < 0);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useLayoutEffect(() => {
+    const context = gsap.context(() => {
+      gsap.from(heroGridRef.current?.children || [], {
+        scrollTrigger: {
+          trigger: heroGridRef.current,
+          start: "top 85%",
+          toggleActions: "play none none none",
+        },
+        opacity: 0,
+        y: 30,
+        duration: 1,
+        stagger: 0,
+        ease: "power2.out",
+      });
+    }, heroGridRef);
+    return () => context.revert();
+  }, []);
+
   return (
     <div className="page menus-page">
-      <Header />
-      <Hero
-        override={
-          <Flex.Container
-            direction="column"
-            justify="center"
-            align="center"
-            style={{ alignContent: "center" }}
-            gap="4rem"
-          >
-            <Flex.Container direction="column" align="center" gap="0rem">
-              <Typography.Heading level={1}>Sample Menus</Typography.Heading>
-              <Typography.Body level={1}>
-                A journey in cultural heritage expressed through food from
-                kitchen to plate
-              </Typography.Body>
+      <Header blur={headerBlurred} />
+      <div ref={heroRef}>
+        <Hero
+          override={
+            <Flex.Container
+              direction="column"
+              justify="center"
+              align="center"
+              style={{ alignContent: "center" }}
+              gap="4rem"
+            >
+              <Flex.Container direction="column" align="center" gap="0rem">
+                <Typography.Heading level={1}>Sample Menus</Typography.Heading>
+                <Typography.Body level={4}>
+                  A journey in cultural heritage expressed through food from
+                  kitchen to plate
+                </Typography.Body>
+              </Flex.Container>
+              <div className={styles.heroGrid} ref={heroGridRef}>
+                <Card
+                  variant="textbox"
+                  onClick={() => handleMenuChange("Kultura")}
+                  className={styles.heroCard}
+                  label="Kultura"
+                  img={<img className={styles.cardImg} src={KULTURA_IMG} />}
+                />
+                <Card
+                  variant="textbox"
+                  onClick={() => handleMenuChange("Hanguk")}
+                  className={styles.heroCard}
+                  label="Hanguk"
+                  img={<img className={styles.cardImg} src={HANGUK_IMG} />}
+                />
+              </div>
             </Flex.Container>
-            <div className={styles.heroGrid}>
-              <Card
-                onClick={() => handleMenuChange("Kultura")}
-                className={styles.heroCard}
-                label="Kultura"
-                img={<img className={styles.cardImg} src={KULTURA_IMG} />}
-              />
-              <Card
-                onClick={() => handleMenuChange("Hanguk")}
-                className={styles.heroCard}
-                label="Hanguk"
-                img={<img className={styles.cardImg} src={HANGUK_IMG} />}
-              />
+          }
+        />
+      </div>
+      <section
+          style={{ paddingTop: "8rem" }}
+          ref={menuSectionRef}
+          className="section"
+        >
+          <Flex.Container
+            direction="row"
+            gap="4rem"
+            align="center"
+            style={{ paddingBottom: "6rem" }}
+          >
+            <div
+              onClick={() => handleMenuChange("Kultura")}
+              style={{ cursor: "pointer" }}
+            >
+              {menu === "Kultura" ? (
+                <Flex.Container direction="column">
+                  <Typography.Heading level={SELECTED_HEADING_LEVEL}>
+                    Kultura
+                  </Typography.Heading>
+                  <div
+                    style={{
+                      width: "100%",
+                      height: "1px",
+                      backgroundColor: "white",
+                    }}
+                  />
+                </Flex.Container>
+              ) : (
+                <Typography.Heading level={UNSELECTED_HEADING_LEVEL}>
+                  Kultura
+                </Typography.Heading>
+              )}
+            </div>
+            <div
+              onClick={() => handleMenuChange("Hanguk")}
+              style={{ cursor: "pointer" }}
+            >
+              {menu === "Hanguk" ? (
+                <Flex.Container direction="column">
+                  <Typography.Heading level={SELECTED_HEADING_LEVEL}>
+                    Hanguk
+                  </Typography.Heading>
+                  <div
+                    style={{
+                      width: "100%",
+                      height: "1px",
+                      backgroundColor: "white",
+                    }}
+                  />
+                </Flex.Container>
+              ) : (
+                <Typography.Heading level={UNSELECTED_HEADING_LEVEL}>
+                  Hanguk
+                </Typography.Heading>
+              )}
             </div>
           </Flex.Container>
-        }
-      />
-      <section ref={menuSectionRef} className="section">
-        <Flex.Container
-          direction="row"
-          gap="4rem"
-          align="center"
-          style={{ paddingBottom: "6rem" }}
-        >
-          <div
-            onClick={() => handleMenuChange("Kultura")}
-            style={{ cursor: "pointer" }}
-          >
-            {menu === "Kultura" ? (
-              <Flex.Container direction="column">
-                <Typography.Heading level={2}>Kultura</Typography.Heading>
-                <div
-                  style={{
-                    width: "100%",
-                    height: "1px",
-                    backgroundColor: "white",
-                  }}
-                />
-              </Flex.Container>
-            ) : (
-              <Typography.Heading level={3}>Kultura</Typography.Heading>
-            )}
-          </div>
-          <div
-            onClick={() => handleMenuChange("Hanguk")}
-            style={{ cursor: "pointer" }}
-          >
-            {menu === "Hanguk" ? (
-              <Flex.Container direction="column">
-                <Typography.Heading level={2}>Hanguk</Typography.Heading>
-                <div
-                  style={{
-                    width: "100%",
-                    height: "1px",
-                    backgroundColor: "white",
-                  }}
-                />
-              </Flex.Container>
-            ) : (
-              <Typography.Heading level={3}>Hanguk</Typography.Heading>
-            )}
-          </div>
-        </Flex.Container>
 
-        <Flex.Container
-          className={styles.menuBody}
-          // direction="column"
-          gap="2rem"
-        >
           <Flex.Container
-            direction="column"
-            align="center"
-            className={`core-width-100 ${styles.menuContainer}`}
-            gap="4rem"
+            className={styles.menuBody}
+            // direction="column"
+            gap="2rem"
           >
-            <Card
-              label="Classic Menu"
-              showLabelOnCard={false}
-              img={
-                <img
-                  className={styles.cardImg}
-                  src={menu === "Kultura" ? KULTURA_MENU : HANGUK_MENU}
-                />
-              }
-              onClick={() =>
-                setSelectedImage({
-                  src: menu === "Kultura" ? KULTURA_MENU : HANGUK_MENU,
-                  label: "Classic Menu",
-                })
-              }
-            />
-            <Card
-              label="Vegetarian Menu"
-              showLabelOnCard={false}
-              img={
-                <img
-                  className={styles.cardImg}
-                  src={menu === "Kultura" ? KULTURA_MENU_VG : HANGUK_MENU_VG}
-                />
-              }
-              onClick={() =>
-                setSelectedImage({
-                  src: menu === "Kultura" ? KULTURA_MENU_VG : HANGUK_MENU_VG,
-                  label: "Vegetarian Menu",
-                })
-              }
-            />
-          </Flex.Container>
-          <div className={styles.dishGrid}>
-            {imageList.map((image, index) => (
+            <Flex.Container
+              direction="column"
+              align="center"
+              className={`core-width-100 ${styles.menuContainer}`}
+              gap="4rem"
+            >
               <Card
-                key={image}
+                label="Classic Menu"
                 showLabelOnCard={false}
-                label={`${menu} Dish ${index + 1}`}
                 img={
-                  <img className={styles.dishCard} src={image} loading="lazy" />
+                  <img
+                    className={styles.cardImg}
+                    src={menu === "Kultura" ? KULTURA_MENU : HANGUK_MENU}
+                  />
                 }
                 onClick={() =>
                   setSelectedImage({
-                    src: image,
-                    label: `${menu} Dish ${index + 1}`,
+                    src: menu === "Kultura" ? KULTURA_MENU : HANGUK_MENU,
+                    label: "Classic Menu",
                   })
                 }
               />
-            ))}
-          </div>
-        </Flex.Container>
-      </section>
+              <Card
+                label="Vegetarian Menu"
+                showLabelOnCard={false}
+                img={
+                  <img
+                    className={styles.cardImg}
+                    src={menu === "Kultura" ? KULTURA_MENU_VG : HANGUK_MENU_VG}
+                  />
+                }
+                onClick={() =>
+                  setSelectedImage({
+                    src: menu === "Kultura" ? KULTURA_MENU_VG : HANGUK_MENU_VG,
+                    label: "Vegetarian Menu",
+                  })
+                }
+              />
+            </Flex.Container>
+            <div className={styles.dishGrid}>
+              {imageList.map((image, index) => (
+                <Card
+                  key={image}
+                  showLabelOnCard={false}
+                  label={`${menu} Dish ${index + 1}`}
+                  img={
+                    <img
+                      className={styles.dishCard}
+                      src={image}
+                      loading="lazy"
+                    />
+                  }
+                  onClick={() =>
+                    setSelectedImage({
+                      src: image,
+                      label: `${menu} Dish ${index + 1}`,
+                    })
+                  }
+                />
+              ))}
+            </div>
+          </Flex.Container>
+        </section>
 
-      <ImageModal
-        isOpen={!!selectedImage}
-        onClose={() => setSelectedImage(null)}
-        src={selectedImage?.src ?? ""}
-        label={selectedImage?.label ?? ""}
-      />
+        <ImageModal
+          isOpen={!!selectedImage}
+          onClose={() => setSelectedImage(null)}
+          src={selectedImage?.src ?? ""}
+          label={selectedImage?.label ?? ""}
+        />
 
-      <Footer />
+        <Footer />
     </div>
   );
 }

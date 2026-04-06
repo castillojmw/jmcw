@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { Flex } from "../../components/core/Flex/Flex";
@@ -39,6 +39,8 @@ export default function HomePage() {
   const containerRef = useRef(null);
   const indicatorRef = useRef<HTMLDivElement | null>(null);
   const cardSectionRef = useRef<HTMLDivElement | null>(null);
+  const [headerBlurred, setHeaderBlurred] = useState(false);
+  const heroRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
     const context = gsap.context(() => {
@@ -60,6 +62,18 @@ export default function HomePage() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (heroRef.current) {
+        const heroBottom = heroRef.current.getBoundingClientRect().bottom;
+        setHeaderBlurred(heroBottom < 0);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   // Hide scroll indicator after first scroll interaction
@@ -115,41 +129,43 @@ export default function HomePage() {
 
   return (
     <div className="page home-page">
-      <Header />
+      <Header blur={headerBlurred} />
 
-      <Hero
-        extraContent={
-          <div
-            ref={indicatorRef}
-            className={styles.chevronWrapper}
-            onClick={handleIndicatorClick}
-            title="Scroll to explore"
-          >
+      <div ref={heroRef}>
+        <Hero
+          extraContent={
             <div
-              style={{
-                backgroundColor: "#1f1f1f",
-                width: "100px",
-                color: "white",
-                border: "none",
-                textAlign: "center",
-                borderRadius: "1rem",
-                paddingTop: "5px",
-                paddingBottom: "5px",
-                paddingLeft: "10px",
-                paddingRight: "10px",
-              }}
+              ref={indicatorRef}
+              className={styles.chevronWrapper}
+              onClick={handleIndicatorClick}
+              title="Scroll to explore"
             >
-              My work
+              <div
+                style={{
+                  backgroundColor: "#1f1f1f",
+                  width: "100px",
+                  color: "white",
+                  border: "none",
+                  textAlign: "center",
+                  borderRadius: "1rem",
+                  paddingTop: "5px",
+                  paddingBottom: "5px",
+                  paddingLeft: "10px",
+                  paddingRight: "10px",
+                }}
+              >
+                My work
+              </div>
+              <ChevronDownIcon />
             </div>
-            <ChevronDownIcon />
-          </div>
-        }
-      />
+          }
+        />
+      </div>
 
       <section
         ref={cardSectionRef}
         style={{
-          // marginTop: "16rem",
+          paddingTop: "16rem",
           paddingLeft: "1rem",
           paddingRight: "1rem",
           marginBottom: "16rem",
@@ -159,7 +175,7 @@ export default function HomePage() {
         <Flex.Container direction="column" justify="center" align="center">
           <div ref={containerRef} className={styles.cardContainer}>
             {cards.map((item) => (
-              <Card {...item} key={item.to} />
+              <Card {...item} key={item.to} className={styles.card} />
             ))}
           </div>
         </Flex.Container>

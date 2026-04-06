@@ -16,6 +16,10 @@
   }
 }
 
+.overrideBlur {
+  backdrop-filter: blur(5px);
+}
+
 .nav {
   padding-left: 1rem;
 }
@@ -34,4 +38,23 @@
 
 .navLink a:hover {
   color: red;
+}
+
+.emailIcon {
+  position: absolute;
+  right: 1rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+@media (--screen-md) {
+  .emailIcon {
+    right: 4rem;
+  }
+}
+
+.emailIcon:hover {
+  color: #d4af37;
 }

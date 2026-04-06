@@ -26,8 +26,6 @@ export const Hero = ({
     query: `(max-width: ${BREAKPOINTS.md})`,
   });
 
-  //   if (override) return <section className={styles.hero}>{override}</section>;
-
   return (
     <section className={styles.hero}>
       <Layered.Container className={styles.layerContainer}>
@@ -42,7 +40,7 @@ export const Hero = ({
           ) : (
             <>
               <Typography.Heading level={1}>{heading}</Typography.Heading>
-              <p className={styles.heroSubtitle}>{subheading}</p>
+              <Typography.Body level={4}>{subheading}</Typography.Body>
             </>
           )}
         </Layered.Content>

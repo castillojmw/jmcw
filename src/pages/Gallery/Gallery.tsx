@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 import Header from "../../components/Header/Header";
 import Footer from "../../components/core/Footer/Footer";
@@ -56,6 +56,8 @@ export default function GalleryPage() {
     src: string;
     label: string;
   } | null>(null);
+  const [headerBlurred, setHeaderBlurred] = useState(false);
+  const heroRef = useRef<HTMLDivElement>(null);
 
   const imageList = [...BRASSERIE_IMAGE_LIST, ...NORMAL_IMAGE_LIST];
 
@@ -63,15 +65,29 @@ export default function GalleryPage() {
     window.scrollTo(0, 0);
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (heroRef.current) {
+        const heroBottom = heroRef.current.getBoundingClientRect().bottom;
+        setHeaderBlurred(heroBottom < 0);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div className="page gallery-page">
-      <Header />
-      <Hero
-        heading="Gallery"
-        subheading="A small collection of my culinary work"
-      />
+      <Header blur={headerBlurred} />
+      <div ref={heroRef}>
+        <Hero
+          heading="Gallery"
+          subheading="A small collection of my culinary work"
+        />
+      </div>
 
-      <section className="section">
+      <section className={`${styles.gallerySection} section`}>
         <div className={styles.galleryContainer}>
           {imageList.map(({ src, label }, index) => (
             <Card

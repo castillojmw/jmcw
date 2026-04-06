@@ -27,10 +27,6 @@ const router = createBrowserRouter([
         path: "/jmcw/about",
         element: <AboutPage />,
       },
-      {
-        path: "/jmcw/contact",
-        element: <ContactPage />,
-      },
     ],
   },
 ]);

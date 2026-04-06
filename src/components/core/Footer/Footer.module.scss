@@ -2,7 +2,6 @@
   background: #0a0a0a;
   border-top: 1px solid var(--color-text-secondary);
   padding: 4rem 0 2rem;
-  margin-top: 4rem;
 }
 
 .footerContainer {
@@ -12,7 +11,26 @@
   gap: 3rem;
 }
 
+.footerLinksGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "brand"
+    "explore"
+    "inquire";
+  gap: 4rem;
+
+  @media (--screen-md) {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "explore brand inquire";
+    column-gap: auto;
+    justify-content: space-between;
+  }
+}
+
 .footerBrand {
+  grid-area: brand;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,17 +38,19 @@
   text-align: center;
 }
 
-.footerLinksGrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-}
-
 .footerSection {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+}
+
+.footerSection:first-of-type {
+  grid-area: explore;
+}
+
+.footerSection:last-of-type {
+  grid-area: inquire;
 }
 
 .footerText {

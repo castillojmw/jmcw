@@ -15,15 +15,15 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.footerContainer}>
-        <div className={styles.footerBrand}>
-          <Typography.Heading level={4}>JMCW</Typography.Heading>
-          <Typography.Body className={styles.footerText} level={5}>
-            Crafting bespoke culinary experiences for private events and
-            discerning guests.
-          </Typography.Body>
-        </div>
-
         <div className={styles.footerLinksGrid}>
+          <div className={styles.footerBrand}>
+            <Typography.Heading level={4}>JMCW</Typography.Heading>
+            <Typography.Body className={styles.footerText} level={5}>
+              Crafting bespoke culinary experiences for private events and
+              discerning guests.
+            </Typography.Body>
+          </div>
+
           <div className={styles.footerSection}>
             <Typography.Heading level={6}>Explore</Typography.Heading>
             {EXPLORE.map(({ label, link }) => (
