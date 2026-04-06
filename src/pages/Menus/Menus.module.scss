@@ -11,23 +11,33 @@
   column-gap: 2rem;
 }
 
-@media (--screen-md) {
+.cardContainer {
+  gap: 2rem !important;
+}
+
+@media (--screen-xs) {
   .heroGrid {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 .heroCard {
-  width: 200px;
+  width: 150px;
 }
 
 @media (--screen-xs) {
   .heroCard {
-    width: 250px;
+    width: 200px;
   }
 }
 
 @media (--screen-md) {
+  .heroCard {
+    width: 300px;
+  }
+}
+
+@media (--screen-lg) {
   .heroCard {
     width: 400px;
   }

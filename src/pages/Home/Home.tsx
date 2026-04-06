@@ -165,7 +165,7 @@ export default function HomePage() {
       <section
         ref={cardSectionRef}
         style={{
-          paddingTop: "16rem",
+          paddingTop: "8rem",
           paddingLeft: "1rem",
           paddingRight: "1rem",
           marginBottom: "16rem",

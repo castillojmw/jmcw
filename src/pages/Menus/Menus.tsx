@@ -29,12 +29,7 @@ type LazyImageProps = {
   shouldLoad: boolean;
 };
 
-const LazyImage = ({
-  src,
-  className,
-  onClick,
-  shouldLoad,
-}: LazyImageProps) => {
+const LazyImage = ({ src, className, onClick, shouldLoad }: LazyImageProps) => {
   const [loaded, setLoaded] = useState(false);
   const imgRef = useRef<HTMLImageElement>(null);
 
@@ -170,7 +165,7 @@ export default function MenusPage() {
               justify="center"
               align="center"
               style={{ alignContent: "center" }}
-              gap="4rem"
+              className={styles.cardContainer}
             >
               <Flex.Container direction="column" align="center" gap="0rem">
                 <Typography.Heading level={1}>Sample Menus</Typography.Heading>
@@ -200,147 +195,147 @@ export default function MenusPage() {
         />
       </div>
       <section
-          style={{ paddingTop: "8rem" }}
-          ref={menuSectionRef}
-          className="section"
+        style={{ paddingTop: "8rem" }}
+        ref={menuSectionRef}
+        className="section"
+      >
+        <Flex.Container
+          direction="row"
+          gap="4rem"
+          align="center"
+          style={{ paddingBottom: "6rem" }}
         >
-          <Flex.Container
-            direction="row"
-            gap="4rem"
-            align="center"
-            style={{ paddingBottom: "6rem" }}
+          <div
+            onClick={() => handleMenuChange("Kultura")}
+            style={{ cursor: "pointer" }}
           >
-            <div
-              onClick={() => handleMenuChange("Kultura")}
-              style={{ cursor: "pointer" }}
-            >
-              {menu === "Kultura" ? (
-                <Flex.Container direction="column">
-                  <Typography.Heading level={SELECTED_HEADING_LEVEL}>
-                    Kultura
-                  </Typography.Heading>
-                  <div
-                    style={{
-                      width: "100%",
-                      height: "1px",
-                      backgroundColor: "white",
-                    }}
-                  />
-                </Flex.Container>
-              ) : (
-                <Typography.Heading level={UNSELECTED_HEADING_LEVEL}>
+            {menu === "Kultura" ? (
+              <Flex.Container direction="column">
+                <Typography.Heading level={SELECTED_HEADING_LEVEL}>
                   Kultura
                 </Typography.Heading>
-              )}
-            </div>
-            <div
-              onClick={() => handleMenuChange("Hanguk")}
-              style={{ cursor: "pointer" }}
-            >
-              {menu === "Hanguk" ? (
-                <Flex.Container direction="column">
-                  <Typography.Heading level={SELECTED_HEADING_LEVEL}>
-                    Hanguk
-                  </Typography.Heading>
-                  <div
-                    style={{
-                      width: "100%",
-                      height: "1px",
-                      backgroundColor: "white",
-                    }}
-                  />
-                </Flex.Container>
-              ) : (
-                <Typography.Heading level={UNSELECTED_HEADING_LEVEL}>
+                <div
+                  style={{
+                    width: "100%",
+                    height: "1px",
+                    backgroundColor: "white",
+                  }}
+                />
+              </Flex.Container>
+            ) : (
+              <Typography.Heading level={UNSELECTED_HEADING_LEVEL}>
+                Kultura
+              </Typography.Heading>
+            )}
+          </div>
+          <div
+            onClick={() => handleMenuChange("Hanguk")}
+            style={{ cursor: "pointer" }}
+          >
+            {menu === "Hanguk" ? (
+              <Flex.Container direction="column">
+                <Typography.Heading level={SELECTED_HEADING_LEVEL}>
                   Hanguk
                 </Typography.Heading>
-              )}
-            </div>
-          </Flex.Container>
-
-          <Flex.Container
-            className={styles.menuBody}
-            // direction="column"
-            gap="2rem"
-          >
-            <Flex.Container
-              direction="column"
-              align="center"
-              className={`core-width-100 ${styles.menuContainer}`}
-              gap="4rem"
-            >
-              <Card
-                label="Classic Menu"
-                showLabelOnCard={false}
-                img={
-                  <img
-                    className={styles.cardImg}
-                    src={menu === "Kultura" ? KULTURA_MENU : HANGUK_MENU}
-                  />
-                }
-                onClick={() =>
-                  setSelectedImage({
-                    src: menu === "Kultura" ? KULTURA_MENU : HANGUK_MENU,
-                    label: "Classic Menu",
-                  })
-                }
-              />
-              <Card
-                label="Vegetarian Menu"
-                showLabelOnCard={false}
-                img={
-                  <img
-                    className={styles.cardImg}
-                    src={menu === "Kultura" ? KULTURA_MENU_VG : HANGUK_MENU_VG}
-                  />
-                }
-                onClick={() =>
-                  setSelectedImage({
-                    src: menu === "Kultura" ? KULTURA_MENU_VG : HANGUK_MENU_VG,
-                    label: "Vegetarian Menu",
-                  })
-                }
-              />
-            </Flex.Container>
-            <div className={styles.dishGrid} ref={dishGridRef}>
-              {imageList.map((image, index) => (
-                <Card
-                  key={image}
-                  showLabelOnCard={false}
-                  label={`${menu} Dish ${index + 1}`}
-                  img={
-                    <LazyImage
-                      src={image}
-                      className={styles.dishCard}
-                      shouldLoad={gridVisible || index < 4}
-                      onClick={() =>
-                        setSelectedImage({
-                          src: image,
-                          label: `${menu} Dish ${index + 1}`,
-                        })
-                      }
-                    />
-                  }
-                  onClick={() =>
-                    setSelectedImage({
-                      src: image,
-                      label: `${menu} Dish ${index + 1}`,
-                    })
-                  }
+                <div
+                  style={{
+                    width: "100%",
+                    height: "1px",
+                    backgroundColor: "white",
+                  }}
                 />
-              ))}
-            </div>
+              </Flex.Container>
+            ) : (
+              <Typography.Heading level={UNSELECTED_HEADING_LEVEL}>
+                Hanguk
+              </Typography.Heading>
+            )}
+          </div>
+        </Flex.Container>
+
+        <Flex.Container
+          className={styles.menuBody}
+          // direction="column"
+          gap="2rem"
+        >
+          <Flex.Container
+            direction="column"
+            align="center"
+            className={`core-width-100 ${styles.menuContainer}`}
+            gap="4rem"
+          >
+            <Card
+              label="Classic Menu"
+              showLabelOnCard={false}
+              img={
+                <img
+                  className={styles.cardImg}
+                  src={menu === "Kultura" ? KULTURA_MENU : HANGUK_MENU}
+                />
+              }
+              onClick={() =>
+                setSelectedImage({
+                  src: menu === "Kultura" ? KULTURA_MENU : HANGUK_MENU,
+                  label: "Classic Menu",
+                })
+              }
+            />
+            <Card
+              label="Vegetarian Menu"
+              showLabelOnCard={false}
+              img={
+                <img
+                  className={styles.cardImg}
+                  src={menu === "Kultura" ? KULTURA_MENU_VG : HANGUK_MENU_VG}
+                />
+              }
+              onClick={() =>
+                setSelectedImage({
+                  src: menu === "Kultura" ? KULTURA_MENU_VG : HANGUK_MENU_VG,
+                  label: "Vegetarian Menu",
+                })
+              }
+            />
           </Flex.Container>
-        </section>
+          <div className={styles.dishGrid} ref={dishGridRef}>
+            {imageList.map((image, index) => (
+              <Card
+                key={image}
+                showLabelOnCard={false}
+                label={`${menu} Dish ${index + 1}`}
+                img={
+                  <LazyImage
+                    src={image}
+                    className={styles.dishCard}
+                    shouldLoad={gridVisible || index < 4}
+                    onClick={() =>
+                      setSelectedImage({
+                        src: image,
+                        label: `${menu} Dish ${index + 1}`,
+                      })
+                    }
+                  />
+                }
+                onClick={() =>
+                  setSelectedImage({
+                    src: image,
+                    label: `${menu} Dish ${index + 1}`,
+                  })
+                }
+              />
+            ))}
+          </div>
+        </Flex.Container>
+      </section>
 
-        <ImageModal
-          isOpen={!!selectedImage}
-          onClose={() => setSelectedImage(null)}
-          src={selectedImage?.src ?? ""}
-          label={selectedImage?.label ?? ""}
-        />
+      <ImageModal
+        isOpen={!!selectedImage}
+        onClose={() => setSelectedImage(null)}
+        src={selectedImage?.src ?? ""}
+        label={selectedImage?.label ?? ""}
+      />
 
-        <Footer />
+      <Footer />
     </div>
   );
 }
