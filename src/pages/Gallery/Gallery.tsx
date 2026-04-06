@@ -57,51 +57,32 @@ type LazyImageProps = {
   src: string;
   className?: string;
   onClick?: () => void;
-  priority?: boolean;
+  shouldLoad: boolean;
 };
 
 const LazyImage = ({
   src,
   className,
   onClick,
-  priority = false,
+  shouldLoad,
 }: LazyImageProps) => {
-  const [loaded, setLoaded] = useState(priority);
+  const [loaded, setLoaded] = useState(false);
   const imgRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
-    if (priority) {
+    if (shouldLoad) {
       const img = new Image();
       img.src = src;
       img.onload = () => setLoaded(true);
-      return;
     }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          const img = new Image();
-          img.src = src;
-          img.onload = () => setLoaded(true);
-          observer.disconnect();
-        }
-      },
-      { rootMargin: "300px" },
-    );
-
-    if (imgRef.current) {
-      observer.observe(imgRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, [src, priority]);
+  }, [src, shouldLoad]);
 
   return (
     <img
       ref={imgRef}
       className={className}
       src={loaded ? src : undefined}
-      loading={priority ? "eager" : "lazy"}
+      loading={shouldLoad ? "eager" : "lazy"}
       decoding="async"
       onClick={onClick}
       style={{ opacity: loaded ? 1 : 0, transition: "opacity 0.3s ease" }}
@@ -115,7 +96,9 @@ export default function GalleryPage() {
     label: string;
   } | null>(null);
   const [headerBlurred, setHeaderBlurred] = useState(false);
+  const [galleryVisible, setGalleryVisible] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
+  const galleryRef = useRef<HTMLDivElement>(null);
 
   const imageList = [...BRASSERIE_IMAGE_LIST, ...NORMAL_IMAGE_LIST];
 
@@ -135,6 +118,24 @@ export default function GalleryPage() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setGalleryVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "300px" },
+    );
+
+    if (galleryRef.current) {
+      observer.observe(galleryRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="page gallery-page">
       <Header blur={headerBlurred} />
@@ -146,29 +147,31 @@ export default function GalleryPage() {
       </div>
 
       <section className={`${styles.gallerySection} section`}>
-        <Masonry
-          breakpointCols={{ default: 3, 768: 2, 480: 1 }}
-          className={styles.galleryContainer}
-          columnClassName={styles.galleryColumn}
-        >
-          {imageList.map(({ src, label }, index) => (
-            <Card
-              key={src}
-              label={`Photo ${index + 1}`}
-              img={
-                <LazyImage
-                  src={src}
-                  className={styles.galleryCard}
-                  onClick={() => setSelectedImage({ src, label })}
-                  priority={index < 20}
-                />
-              }
-              onClick={() => setSelectedImage({ src, label })}
-              showLabelOnCard={false}
-              maxWidth="100%"
-            />
-          ))}
-        </Masonry>
+        <div ref={galleryRef}>
+          <Masonry
+            breakpointCols={{ default: 3, 768: 2, 480: 1 }}
+            className={styles.galleryContainer}
+            columnClassName={styles.galleryColumn}
+          >
+            {imageList.map(({ src, label }, index) => (
+              <Card
+                key={src}
+                label={`Photo ${index + 1}`}
+                img={
+                  <LazyImage
+                    src={src}
+                    className={styles.galleryCard}
+                    onClick={() => setSelectedImage({ src, label })}
+                    shouldLoad={galleryVisible || index < 20}
+                  />
+                }
+                onClick={() => setSelectedImage({ src, label })}
+                showLabelOnCard={false}
+                maxWidth="100%"
+              />
+            ))}
+          </Masonry>
+        </div>
       </section>
 
       <ImageModal
