@@ -56,17 +56,25 @@ type LazyImageProps = {
   src: string;
   className?: string;
   onClick?: () => void;
+  priority?: boolean;
 };
 
-const LazyImage = ({ src, className, onClick }: LazyImageProps) => {
-  const [loaded, setLoaded] = useState(false);
+const LazyImage = ({ src, className, onClick, priority = false }: LazyImageProps) => {
+  const [loaded, setLoaded] = useState(priority);
   const imgRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
+    if (priority) {
+      // Load immediately for above-the-fold images
+      const img = new Image();
+      img.src = src;
+      img.onload = () => setLoaded(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          // Start loading when near viewport
           const img = new Image();
           img.src = src;
           img.onload = () => setLoaded(true);
@@ -81,14 +89,14 @@ const LazyImage = ({ src, className, onClick }: LazyImageProps) => {
     }
 
     return () => observer.disconnect();
-  }, [src]);
+  }, [src, priority]);
 
   return (
     <img
       ref={imgRef}
       className={className}
       src={loaded ? src : undefined}
-      loading="lazy"
+      loading={priority ? "eager" : "lazy"}
       decoding="async"
       onClick={onClick}
       style={{ opacity: loaded ? 1 : 0, transition: "opacity 0.3s ease" }}
@@ -143,6 +151,7 @@ export default function GalleryPage() {
                   src={src}
                   className={styles.galleryCard}
                   onClick={() => setSelectedImage({ src, label })}
+                  priority={index < 6}
                 />
               }
               onClick={() => setSelectedImage({ src, label })}
