@@ -110,19 +110,19 @@ export default function HomePage() {
     {
       label: "Menu Development",
       desc: "Seasonal menus rooted in cultrual heritage with a focus on bold flavors, respectful tradition, and personal expression.",
-      to: "/jmcw/menus",
+      to: "/menus",
       img: <img src={SAMPLE_MENUS_IMG} className={styles.cardImg} />,
     },
     {
       label: "Dining exhibition",
       desc: "An archive of moments across three worlds: the comfort of home kitchen, the intimacy of private dining, the precision of fine dining. Each dish, a story.",
-      to: "/jmcw/gallery",
+      to: "/gallery",
       img: <img src={GALLERY_IMG} className={styles.cardImg} />,
     },
     {
       label: "Culinary journey",
       desc: "A chef whose palate and discipline were forged in elite kitchens, now refined at The Balmoral's French brasserie. At private events, that foundation becomes connection, food designed as a conversation between my cultural roots and the people gathered at the table.",
-      to: "/jmcw/about",
+      to: "/about",
       img: <img src={ABOUT_IMG} className={styles.cardImg} />,
     },
   ];

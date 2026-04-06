@@ -109,7 +109,7 @@ export default function AboutPage() {
             >
               <Button className={styles.button}>
                 <a
-                  href="/jmcw/cv.pdf"
+                  href="/cv.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

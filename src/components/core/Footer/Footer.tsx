@@ -3,10 +3,10 @@ import { Typography } from "../Typography/Typography";
 import styles from "./Footer.module.scss";
 
 const EXPLORE = [
-  { label: "Home", link: "/jmcw" },
-  { label: "Menus", link: "/jmcw/menus" },
-  { label: "Gallery", link: "/jmcw/gallery" },
-  { label: "About", link: "/jmcw/about" },
+  { label: "Home", link: "/" },
+  { label: "Menus", link: "/menus" },
+  { label: "Gallery", link: "/gallery" },
+  { label: "About", link: "/about" },
 ];
 
 export default function Footer() {
