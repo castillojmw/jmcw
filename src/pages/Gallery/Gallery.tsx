@@ -53,58 +53,6 @@ const generateImageList = (images: Record<string, ViteGlobModule>) => {
 const NORMAL_IMAGE_LIST = generateImageList(NORMAL_IMAGES);
 const BRASSERIE_IMAGE_LIST = generateImageList(BRASSERIE_WEBP);
 
-type LazyImageProps = {
-  src: string;
-  className?: string;
-  onClick?: () => void;
-  priority?: boolean;
-};
-
-const LazyImage = ({ src, className, onClick, priority = false }: LazyImageProps) => {
-  const [loaded, setLoaded] = useState(priority);
-  const imgRef = useRef<HTMLImageElement>(null);
-
-  useEffect(() => {
-    if (priority) {
-      // Load immediately for above-the-fold images
-      const img = new Image();
-      img.src = src;
-      img.onload = () => setLoaded(true);
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          const img = new Image();
-          img.src = src;
-          img.onload = () => setLoaded(true);
-          observer.disconnect();
-        }
-      },
-      { rootMargin: "300px" },
-    );
-
-    if (imgRef.current) {
-      observer.observe(imgRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, [src, priority]);
-
-  return (
-    <img
-      ref={imgRef}
-      className={className}
-      src={loaded ? src : undefined}
-      loading={priority ? "eager" : "lazy"}
-      decoding="async"
-      onClick={onClick}
-      style={{ opacity: loaded ? 1 : 0, transition: "opacity 0.3s ease" }}
-    />
-  );
-};
-
 export default function GalleryPage() {
   const [selectedImage, setSelectedImage] = useState<{
     src: string;
@@ -152,11 +100,11 @@ export default function GalleryPage() {
               key={src}
               label={`Photo ${index + 1}`}
               img={
-                <LazyImage
+                <img
                   src={src}
                   className={styles.galleryCard}
-                  onClick={() => setSelectedImage({ src, label })}
-                  priority={index < 6}
+                  loading="lazy"
+                  decoding="async"
                 />
               }
               onClick={() => setSelectedImage({ src, label })}

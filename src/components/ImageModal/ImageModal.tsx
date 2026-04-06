@@ -48,11 +48,13 @@ export const ImageModal = (props: ImageModalProps) => {
         className={styles.content}
         onClick={(e) => e.stopPropagation()}
       >
-        <img
-          src={src}
-          alt={alt}
-          className={styles.image}
-        />
+        <div className={styles.imageWrapper}>
+          <img
+            src={src}
+            alt={alt}
+            className={styles.image}
+          />
+        </div>
         <div className={styles.footer}>
           <p className={styles.label}>{label}</p>
           <button

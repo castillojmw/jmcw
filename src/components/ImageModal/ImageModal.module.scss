@@ -11,11 +11,16 @@
 
 .content {
   position: relative;
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   max-width: 90vw;
   max-height: 90vh;
   gap: 1rem;
+}
+
+.imageWrapper {
+  display: inline-block;
+  max-width: 100%;
 }
 
 .image {
