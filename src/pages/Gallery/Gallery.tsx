@@ -8,50 +8,9 @@ import { ImageModal } from "../../components/ImageModal/ImageModal";
 
 import styles from "./Gallery.module.scss";
 import { Hero } from "../../sections/Hero/Hero";
+import { ALL_MEDIA } from "@/utils/imageExtraction";
 
 export type ViteGlobModule = { default: string };
-
-const NORMAL_IMAGES = import.meta.glob<ViteGlobModule>(
-  "@/assets/NORMAL_WEBP/*.webp",
-  {
-    eager: true,
-  },
-);
-
-const BRASSERIE_WEBP = import.meta.glob<ViteGlobModule>(
-  "@/assets/BRASSERIE_WEBP/*.webp",
-  {
-    eager: true,
-  },
-);
-
-const generateImageList = (images: Record<string, ViteGlobModule>) => {
-  const isProd = import.meta.env.PROD;
-  return Object.entries(images).map(([, mod]) => {
-    const fileName = mod.default.split("/").at(-1);
-    if (fileName) {
-      const name = fileName.split(".webp")[0];
-      const parts = name.split("-");
-      const cleanName = isProd ? parts.slice(0, -1).join("-") : parts.join("-");
-      const nameWithSpaces = cleanName
-        .replaceAll("-", " ")
-        .replaceAll(" , ", ", ");
-
-      const formattedLabel = `${nameWithSpaces.charAt(0).toUpperCase()}${nameWithSpaces.slice(1)}`;
-      return {
-        src: mod.default,
-        label: formattedLabel,
-      };
-    }
-    return {
-      src: mod.default,
-      label: "",
-    };
-  });
-};
-
-const NORMAL_IMAGE_LIST = generateImageList(NORMAL_IMAGES);
-const BRASSERIE_IMAGE_LIST = generateImageList(BRASSERIE_WEBP);
 
 type LazyImageProps = {
   src: string;
@@ -60,12 +19,7 @@ type LazyImageProps = {
   shouldLoad: boolean;
 };
 
-const LazyImage = ({
-  src,
-  className,
-  onClick,
-  shouldLoad,
-}: LazyImageProps) => {
+const LazyImage = ({ src, className, onClick, shouldLoad }: LazyImageProps) => {
   const [loaded, setLoaded] = useState(false);
   const imgRef = useRef<HTMLImageElement>(null);
 
@@ -100,7 +54,7 @@ export default function GalleryPage() {
   const heroRef = useRef<HTMLDivElement>(null);
   const galleryRef = useRef<HTMLDivElement>(null);
 
-  const imageList = [...BRASSERIE_IMAGE_LIST, ...NORMAL_IMAGE_LIST];
+  console.log({ ALL_MEDIA });
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -153,7 +107,7 @@ export default function GalleryPage() {
             className={styles.galleryContainer}
             columnClassName={styles.galleryColumn}
           >
-            {imageList.map(({ src, label }, index) => (
+            {ALL_MEDIA.map(({ src, label }, index) => (
               <Card
                 key={src}
                 label={`Photo ${index + 1}`}

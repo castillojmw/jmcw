@@ -1,0 +1,942 @@
+[
+  {
+    "label": "Beetroot and feta dip, fries, shisho tempura with beef tartare topped with confit yolk and whisky emulsion haggis",
+    "src": "@/assets/BRASSERIE_WEBP/beetroot-and-feta-dip-,-fries-,-shisho-tempura-with-beef-tartare-topped-with-confit-yolk-and-whisky-emulsion-haggis.webp",
+    "category": "brasserie"
+  },
+  {
+    "label": "Burger with rarebit",
+    "src": "@/assets/BRASSERIE_WEBP/burger-with-rarebit.webp",
+    "category": "brasserie"
+  },
+  {
+    "label": "Carbonara donut",
+    "src": "@/assets/BRASSERIE_WEBP/carbonara-donut.webp",
+    "category": "brasserie"
+  },
+  {
+    "label": "Ceaser salad",
+    "src": "@/assets/BRASSERIE_WEBP/ceaser-salad.webp",
+    "category": "brasserie"
+  },
+  {
+    "label": "Champagne caviar oyster",
+    "src": "@/assets/BRASSERIE_WEBP/champagne-caviar-oyster.webp",
+    "category": "brasserie"
+  },
+  {
+    "label": "Chicken schnitzel",
+    "src": "@/assets/BRASSERIE_WEBP/chicken-schnitzel.webp",
+    "category": "brasserie"
+  },
+  {
+    "label": "Club sandwich",
+    "src": "@/assets/BRASSERIE_WEBP/club-sandwich.webp",
+    "category": "brasserie"
+  },
+  {
+    "label": "Crispy pork belly with chimichurri",
+    "src": "@/assets/BRASSERIE_WEBP/crispy-pork-belly-with-chimichurri.webp",
+    "category": "brasserie"
+  },
+  {
+    "label": "Daal churro chicken waffle baba and mushroom focaccia",
+    "src": "@/assets/BRASSERIE_WEBP/daal-churro-chicken-waffle-baba-and-mushroom-focaccia.webp",
+    "category": "brasserie"
+  },
+  {
+    "label": "Korean fried chicken with grilled padron and romesco and mutabbal",
+    "src": "@/assets/BRASSERIE_WEBP/korean-fried-chicken-with-grilled-padron-and-romesco-and-mutabbal.webp",
+    "category": "brasserie"
+  },
+  {
+    "label": "Lamb lahmacun",
+    "src": "@/assets/BRASSERIE_WEBP/lamb-lahmacun.webp",
+    "category": "brasserie"
+  },
+  {
+    "label": "Maple mascarpone chicken waffles",
+    "src": "@/assets/BRASSERIE_WEBP/maple-mascarpone-chicken-waffles.webp",
+    "category": "brasserie"
+  },
+  {
+    "label": "Mushroom focaccia, crispy porkbelly, and lahmacun",
+    "src": "@/assets/BRASSERIE_WEBP/mushroom-focaccia-,-crispy-porkbelly-,-and-lahmacun.webp",
+    "category": "brasserie"
+  },
+  {
+    "label": "Padron peppers",
+    "src": "@/assets/BRASSERIE_WEBP/padron-peppers.webp",
+    "category": "brasserie"
+  },
+  {
+    "label": "Savory baba on sundried tomato pesto topped with whipped burrata and serrano ham",
+    "src": "@/assets/BRASSERIE_WEBP/savory-baba-on-sundried-tomato-pesto-topped-with-whipped-burrata-and-serrano-ham.webp",
+    "category": "brasserie"
+  },
+  {
+    "label": "Savoury kimchi churro",
+    "src": "@/assets/BRASSERIE_WEBP/savoury-kimchi-churro.webp",
+    "category": "brasserie"
+  },
+  {
+    "label": "Whisky emulsion haggis toastie with turnip and potato crisps",
+    "src": "@/assets/BRASSERIE_WEBP/whisky-emulsion-haggis-toastie-with-turnip-and-potato-crisps.webp",
+    "category": "brasserie"
+  },
+  {
+    "label": "Wild mushroom focaccia",
+    "src": "@/assets/BRASSERIE_WEBP/wild-mushroom-focaccia.webp",
+    "category": "brasserie"
+  },
+  {
+    "label": "Aloo gobi",
+    "src": "@/assets/NORMAL_WEBP/aloo-gobi-2.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Aloo gobi",
+    "src": "@/assets/NORMAL_WEBP/aloo-gobi-3.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Aloo gobi and butter chicken",
+    "src": "@/assets/NORMAL_WEBP/aloo-gobi-and-butter-chicken.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Aloo gobi prep",
+    "src": "@/assets/NORMAL_WEBP/aloo-gobi-prep.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Bagel",
+    "src": "@/assets/NORMAL_WEBP/bagel.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Banana bread",
+    "src": "@/assets/NORMAL_WEBP/banana-bread.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Bao",
+    "src": "@/assets/NORMAL_WEBP/bao.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Beef bourguignon with miso eggplant and salad",
+    "src": "@/assets/NORMAL_WEBP/beef-bourguignon-with-miso-eggplant-and-salad.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Beef bourguignon",
+    "src": "@/assets/NORMAL_WEBP/beef-bourguignon.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Beef noodle",
+    "src": "@/assets/NORMAL_WEBP/beef-noodle.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Beijing style zhajiang noodles",
+    "src": "@/assets/NORMAL_WEBP/beijing-style-zhajiang-noodles.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Brownies",
+    "src": "@/assets/NORMAL_WEBP/brownies.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Buko pie, white chocolate matcha cookies, ube cookies, pastillias, chocolate truffles and flapjacks",
+    "src": "@/assets/NORMAL_WEBP/buko-pie-,-white-chocolate-matcha-cookies-,-ube-cookies-,-pastillias-,-chocolate-truffles-and-flapjacks-2.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Buko pie, white chocolate matcha cookies, ube cookies, pastillias, chocolate truffles and flapjacks",
+    "src": "@/assets/NORMAL_WEBP/buko-pie-,-white-chocolate-matcha-cookies-,-ube-cookies-,-pastillias-,-chocolate-truffles-and-flapjacks.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Bulalo",
+    "src": "@/assets/NORMAL_WEBP/bulalo.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Bulgogi portioned",
+    "src": "@/assets/NORMAL_WEBP/bulgogi-portioned.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Butter chicken prep",
+    "src": "@/assets/NORMAL_WEBP/butter-chicken-prep.webp",
+    "category": "normal"
+  },
+  {
+    "label": "B\u00e1nh x\u00e8o",
+    "src": "@/assets/NORMAL_WEBP/b\u00e1nh-x\u00e8o.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Cacio e pepe",
+    "src": "@/assets/NORMAL_WEBP/cacio-e-pepe.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Carbonara",
+    "src": "@/assets/NORMAL_WEBP/carbonara.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Char siu chicken with kimchi pancakes and confit egg yolks",
+    "src": "@/assets/NORMAL_WEBP/char-siu-chicken-with-kimchi-pancakes-and-confit-egg-yolks.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Char siu chicken",
+    "src": "@/assets/NORMAL_WEBP/char-siu-chicken.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Chicken adobo",
+    "src": "@/assets/NORMAL_WEBP/chicken-adobo.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Chicken biryani prep",
+    "src": "@/assets/NORMAL_WEBP/chicken-biryani-prep.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Chicken confee with boiled egg",
+    "src": "@/assets/NORMAL_WEBP/chicken-confee-with-boiled-egg.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Chicken katsu curry",
+    "src": "@/assets/NORMAL_WEBP/chicken-katsu-curry.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Chicken katsu with miso",
+    "src": "@/assets/NORMAL_WEBP/chicken-katsu-with-miso.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Chicken noodle soup",
+    "src": "@/assets/NORMAL_WEBP/chicken-noodle-soup.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Chicken noodle",
+    "src": "@/assets/NORMAL_WEBP/chicken-noodle.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Chicken pad kra pao",
+    "src": "@/assets/NORMAL_WEBP/chicken-pad-kra-pao.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Chicken ramen",
+    "src": "@/assets/NORMAL_WEBP/chicken-ramen.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Chicken rice porridge",
+    "src": "@/assets/NORMAL_WEBP/chicken-rice-porridge.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Chicken schnitzel with alfredo fetuccine",
+    "src": "@/assets/NORMAL_WEBP/chicken-schnitzel-with-alfredo-fetuccine.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Chicken tikka",
+    "src": "@/assets/NORMAL_WEBP/chicken-tikka.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Chinese soy braised eggplant and rice",
+    "src": "@/assets/NORMAL_WEBP/chinese-soy-braised-eggplant-and-rice.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Chorizo risotto",
+    "src": "@/assets/NORMAL_WEBP/chorizo-risotto.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Cripsy seabass DUP",
+    "src": "@/assets/NORMAL_WEBP/cripsy-seabass-DUP.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Cripsy seabass",
+    "src": "@/assets/NORMAL_WEBP/cripsy-seabass.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Crispy eggplant and tofu in gochujang",
+    "src": "@/assets/NORMAL_WEBP/crispy-eggplant-and-tofu-in-gochujang.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Crispy pork belly",
+    "src": "@/assets/NORMAL_WEBP/crispy-pork-belly-2.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Crispy pork belly and rice",
+    "src": "@/assets/NORMAL_WEBP/crispy-pork-belly-and-rice.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Crispy pork belly",
+    "src": "@/assets/NORMAL_WEBP/crispy-pork-belly.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Crispy seabass in mango habanero sauce topped with pickled carrots and green oil",
+    "src": "@/assets/NORMAL_WEBP/crispy-seabass-in-mango-habanero-sauce-topped-with-pickled-carrots-and-green-oil.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Curry prawns",
+    "src": "@/assets/NORMAL_WEBP/curry-prawns-2.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Curry prawns",
+    "src": "@/assets/NORMAL_WEBP/curry-prawns.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Dark chocolate brownies",
+    "src": "@/assets/NORMAL_WEBP/dark-chocolate-brownies.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Dark chocolate cake",
+    "src": "@/assets/NORMAL_WEBP/dark-chocolate-cake.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Dark chocolate truffles",
+    "src": "@/assets/NORMAL_WEBP/dark-chocolate-truffles.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Duck with blackberry reduction",
+    "src": "@/assets/NORMAL_WEBP/duck-with-blackberry-reduction.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Farmers",
+    "src": "@/assets/NORMAL_WEBP/farmers-2.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Farmers",
+    "src": "@/assets/NORMAL_WEBP/farmers.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Filipino beef tapa",
+    "src": "@/assets/NORMAL_WEBP/filipino-beef-tapa.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Filipino breakfast",
+    "src": "@/assets/NORMAL_WEBP/filipino-breakfast.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Filipino chicken soy braised stew",
+    "src": "@/assets/NORMAL_WEBP/filipino-chicken-soy-braised-stew.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Filipino chicken tinola",
+    "src": "@/assets/NORMAL_WEBP/filipino-chicken-tinola.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Filipino pinakbet, pad krapao vegetarian and kung pao chicken",
+    "src": "@/assets/NORMAL_WEBP/filipino-pinakbet-,-pad-krapao-vegetarian-and-kung-pao-chicken.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Filipino shrimp rice noodles",
+    "src": "@/assets/NORMAL_WEBP/filipino-shrimp-rice-noodles.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Filipino shrimp sinigang",
+    "src": "@/assets/NORMAL_WEBP/filipino-shrimp-sinigang.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Filipino sinigang prep",
+    "src": "@/assets/NORMAL_WEBP/filipino-sinigang-prep.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Filipino tocino and rice",
+    "src": "@/assets/NORMAL_WEBP/filipino-tocino-and-rice.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Foccacia pizza base",
+    "src": "@/assets/NORMAL_WEBP/foccacia-pizza-base.webp",
+    "category": "normal"
+  },
+  {
+    "label": "French toast with strawberry compote close up",
+    "src": "@/assets/NORMAL_WEBP/french-toast-with-strawberry-compote-close-up.webp",
+    "category": "normal"
+  },
+  {
+    "label": "French toast with strawberry compote",
+    "src": "@/assets/NORMAL_WEBP/french-toast-with-strawberry-compote.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Galbi jjim",
+    "src": "@/assets/NORMAL_WEBP/galbi-jjim.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Gochujang and miso eggplant with porkbelly",
+    "src": "@/assets/NORMAL_WEBP/gochujang-and-miso-eggplant-with-porkbelly.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Homemade kimchi",
+    "src": "@/assets/NORMAL_WEBP/homemade-kimchi.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Hotpot",
+    "src": "@/assets/NORMAL_WEBP/hotpot-2.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Hotpot prep",
+    "src": "@/assets/NORMAL_WEBP/hotpot-prep.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Hotpot",
+    "src": "@/assets/NORMAL_WEBP/hotpot.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Jajangmyeon",
+    "src": "@/assets/NORMAL_WEBP/jajangmyeon.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Japanese chicken katsu and rice with sesame cabage slaw",
+    "src": "@/assets/NORMAL_WEBP/japanese-chicken-katsu-and-rice-with-sesame-cabage-slaw.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Japanese chicken katsu and rice",
+    "src": "@/assets/NORMAL_WEBP/japanese-chicken-katsu-and-rice.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Japanese eel and rice",
+    "src": "@/assets/NORMAL_WEBP/japanese-eel-and-rice.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Japanese eel prep",
+    "src": "@/assets/NORMAL_WEBP/japanese-eel-prep.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Japanese fluffy pancakes",
+    "src": "@/assets/NORMAL_WEBP/japanese-fluffy-pancakes.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Japanese miso salmon",
+    "src": "@/assets/NORMAL_WEBP/japanese-miso-salmon.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Japanese oden",
+    "src": "@/assets/NORMAL_WEBP/japanese-oden-3.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Japanese oden portioned",
+    "src": "@/assets/NORMAL_WEBP/japanese-oden-portioned.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Japanese oden prep",
+    "src": "@/assets/NORMAL_WEBP/japanese-oden-prep.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Japanese oden",
+    "src": "@/assets/NORMAL_WEBP/japanese-oden.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Kadala curry",
+    "src": "@/assets/NORMAL_WEBP/kadala-curry-2.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Kare kare",
+    "src": "@/assets/NORMAL_WEBP/kare-kare.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Khao soi",
+    "src": "@/assets/NORMAL_WEBP/khao-soi-2.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Khao soi prep",
+    "src": "@/assets/NORMAL_WEBP/khao-soi-prep.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Khao soi",
+    "src": "@/assets/NORMAL_WEBP/khao-soi.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Kimchi jiggae",
+    "src": "@/assets/NORMAL_WEBP/kimchi-jiggae.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Kimchi jjigae",
+    "src": "@/assets/NORMAL_WEBP/kimchi-jjigae.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Korean bbq prep",
+    "src": "@/assets/NORMAL_WEBP/korean-bbq-prep.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Korean bbq",
+    "src": "@/assets/NORMAL_WEBP/korean-bbq.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Korean bossam",
+    "src": "@/assets/NORMAL_WEBP/korean-bossam-1.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Korean bossam",
+    "src": "@/assets/NORMAL_WEBP/korean-bossam.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Korean bunch",
+    "src": "@/assets/NORMAL_WEBP/korean-bunch.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Korean feast",
+    "src": "@/assets/NORMAL_WEBP/korean-feast.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Korean japchae and doenjang jjigae",
+    "src": "@/assets/NORMAL_WEBP/korean-japchae-and-doenjang-jjigae-2.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Korean japchae and doenjang jjigae",
+    "src": "@/assets/NORMAL_WEBP/korean-japchae-and-doenjang-jjigae.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Korean japchae",
+    "src": "@/assets/NORMAL_WEBP/korean-japchae.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Korean salt bread egg mayo and spicy salmon filling topped with furikake and japanese pickles",
+    "src": "@/assets/NORMAL_WEBP/korean-salt-bread-egg-mayo-and-spicy-salmon-filling-topped-with-furikake-and-japanese-pickles.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Kung pao chicken with rice",
+    "src": "@/assets/NORMAL_WEBP/kung-pao-chicken-with-rice-2.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Kung pao chicken with rice",
+    "src": "@/assets/NORMAL_WEBP/kung-pao-chicken-with-rice.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Lamb curry",
+    "src": "@/assets/NORMAL_WEBP/lamb-curry.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Lasagna",
+    "src": "@/assets/NORMAL_WEBP/lasagna.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Lemon sole cantonese steamed fish",
+    "src": "@/assets/NORMAL_WEBP/lemon-sole-cantonese-steamed-fish.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Lobster crudo",
+    "src": "@/assets/NORMAL_WEBP/lobster-crudo.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Lobster pasta",
+    "src": "@/assets/NORMAL_WEBP/lobster-pasta.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Lobster prep",
+    "src": "@/assets/NORMAL_WEBP/lobster-prep.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Mang inasal",
+    "src": "@/assets/NORMAL_WEBP/mang-inasal.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Marinated grilled chicken",
+    "src": "@/assets/NORMAL_WEBP/marinated-grilled-chicken.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Market",
+    "src": "@/assets/NORMAL_WEBP/market.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Mascarpone cake",
+    "src": "@/assets/NORMAL_WEBP/mascarpone-cake.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Mascarpone raspberry cake",
+    "src": "@/assets/NORMAL_WEBP/mascarpone-raspberry-cake.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Matcha tiramisu",
+    "src": "@/assets/NORMAL_WEBP/matcha-tiramisu-2.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Matcha tiramisu",
+    "src": "@/assets/NORMAL_WEBP/matcha-tiramisu.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Me with chicken adobo",
+    "src": "@/assets/NORMAL_WEBP/me-with-chicken-adobo.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Me with dark chocolate cake",
+    "src": "@/assets/NORMAL_WEBP/me-with-dark-chocolate-cake.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Me with filipino desserts",
+    "src": "@/assets/NORMAL_WEBP/me-with-filipino-desserts.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Me with kare kare",
+    "src": "@/assets/NORMAL_WEBP/me-with-kare-kare.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Miso eggplant",
+    "src": "@/assets/NORMAL_WEBP/miso-eggplant.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Moules \u00e1 la cr\u00e9me",
+    "src": "@/assets/NORMAL_WEBP/moules-\u00e1-la-cr\u00e9me.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Oxtail stew with gremolata",
+    "src": "@/assets/NORMAL_WEBP/oxtail-stew-with-gremolata.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Pad krapao vegetarian",
+    "src": "@/assets/NORMAL_WEBP/pad-krapao-vegetarian.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Pad thai",
+    "src": "@/assets/NORMAL_WEBP/pad-thai.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Palabok",
+    "src": "@/assets/NORMAL_WEBP/palabok.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Palak paneer and lamb curry",
+    "src": "@/assets/NORMAL_WEBP/palak-paneer-and-lamb-curry.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Palak paneer",
+    "src": "@/assets/NORMAL_WEBP/palak-paneer.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Pancake",
+    "src": "@/assets/NORMAL_WEBP/pancake.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Pandesal",
+    "src": "@/assets/NORMAL_WEBP/pandesal.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Paneer tikka massala",
+    "src": "@/assets/NORMAL_WEBP/paneer-tikka-massala-2.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Paneer tikka massala",
+    "src": "@/assets/NORMAL_WEBP/paneer-tikka-massala.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Pastel da nata",
+    "src": "@/assets/NORMAL_WEBP/pastel-da-nata.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Pavlova cake",
+    "src": "@/assets/NORMAL_WEBP/pavlova-cake-2.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Pavlova cake",
+    "src": "@/assets/NORMAL_WEBP/pavlova-cake.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Pepper lunch",
+    "src": "@/assets/NORMAL_WEBP/pepper-lunch.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Pork banh mi",
+    "src": "@/assets/NORMAL_WEBP/pork-banh-mi.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Pork belly",
+    "src": "@/assets/NORMAL_WEBP/pork-belly.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Ribeye steak",
+    "src": "@/assets/NORMAL_WEBP/ribeye-steak.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Ribeye with red wine reduction with padron and chimichurri",
+    "src": "@/assets/NORMAL_WEBP/ribeye-with-red-wine-reduction-with-padron-and-chimichurri.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Salmon crudo and nigiri",
+    "src": "@/assets/NORMAL_WEBP/salmon-crudo-and-nigiri.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Salmon crudo",
+    "src": "@/assets/NORMAL_WEBP/salmon-crudo.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Salmon nigiri",
+    "src": "@/assets/NORMAL_WEBP/salmon-nigiri.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Salted egg prawn",
+    "src": "@/assets/NORMAL_WEBP/salted-egg-prawn.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Scalion oil with hand ripped noodles",
+    "src": "@/assets/NORMAL_WEBP/scalion-oil-with-hand-ripped-noodles.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Scallion oil udon with crispy pork and pickles",
+    "src": "@/assets/NORMAL_WEBP/scallion-oil-udon-with-crispy-pork-and-pickles.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Scone",
+    "src": "@/assets/NORMAL_WEBP/scone.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Seafood boil",
+    "src": "@/assets/NORMAL_WEBP/seafood-boil.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Shiitake congee",
+    "src": "@/assets/NORMAL_WEBP/shiitake-congee.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Shredded cold chinese chicken",
+    "src": "@/assets/NORMAL_WEBP/shredded-cold-chinese-chicken.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Sichuan fish",
+    "src": "@/assets/NORMAL_WEBP/sichuan-fish-2.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Sichuan fish",
+    "src": "@/assets/NORMAL_WEBP/sichuan-fish.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Sirlion with roasted potatos and chimmichuri with seared brocollini",
+    "src": "@/assets/NORMAL_WEBP/sirlion-with-roasted-potatos-and-chimmichuri-with-seared-brocollini.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Soy marinated grilled chicken",
+    "src": "@/assets/NORMAL_WEBP/soy-marinated-grilled-chicken.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Stew chicken with muchroom prep",
+    "src": "@/assets/NORMAL_WEBP/stew-chicken-with-muchroom-prep.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Strawberry milk with yakult",
+    "src": "@/assets/NORMAL_WEBP/strawberry-milk-with-yakult.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Strawberry milk",
+    "src": "@/assets/NORMAL_WEBP/strawberry-milk.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Sweet and sour pork cover",
+    "src": "@/assets/NORMAL_WEBP/sweet and sour pork cover.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Sweet and sour chicken",
+    "src": "@/assets/NORMAL_WEBP/sweet-and-sour-chicken.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Sweet and sour pork",
+    "src": "@/assets/NORMAL_WEBP/sweet-and-sour-pork.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Szechuan beef",
+    "src": "@/assets/NORMAL_WEBP/szechuan-beef.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Thai gaeng hung lay curry with rice",
+    "src": "@/assets/NORMAL_WEBP/thai-gaeng-hung-lay-curry-with-rice.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Thai gaeng hung lay curry",
+    "src": "@/assets/NORMAL_WEBP/thai-gaeng-hung-lay-curry.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Thai green curry",
+    "src": "@/assets/NORMAL_WEBP/thai-green-curry.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Thai pomelo salad",
+    "src": "@/assets/NORMAL_WEBP/thai-pomelo-salad.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Thai tom kha gai",
+    "src": "@/assets/NORMAL_WEBP/thai-tom-kha-gai.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Thai tom yum",
+    "src": "@/assets/NORMAL_WEBP/thai-tom-yum.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Thanksgiving dinner",
+    "src": "@/assets/NORMAL_WEBP/thanksgiving-dinner.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Triple chocolate cake",
+    "src": "@/assets/NORMAL_WEBP/triple-chocolate-cake.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Viet and thai dish",
+    "src": "@/assets/NORMAL_WEBP/viet-and-thai-dish.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Viet caramelised salmon",
+    "src": "@/assets/NORMAL_WEBP/viet-caramelised-salmon.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Viet pork chop and korean sesame potato",
+    "src": "@/assets/NORMAL_WEBP/viet-pork-chop-and-korean-sesame-potato.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Viet shaking beef",
+    "src": "@/assets/NORMAL_WEBP/viet-shaking-beef.webp",
+    "category": "normal"
+  },
+  {
+    "label": "White chocolate chip cookies",
+    "src": "@/assets/NORMAL_WEBP/white-chocolate-chip-cookies.webp",
+    "category": "normal"
+  }
+]
