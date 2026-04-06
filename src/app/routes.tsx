@@ -1,13 +1,13 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createHashRouter } from "react-router-dom";
 import App from "../App";
 import HomePage from "../pages/Home/Home";
 import MenusPage from "../pages/Menus/Menus";
 import AboutPage from "../pages/About/About";
 import GalleryPage from "../pages/Gallery/Gallery";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
-    path: "/jmcw",
+    path: "/",
     element: <App />,
     children: [
       {
@@ -15,15 +15,15 @@ const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        path: "/jmcw/menus",
+        path: "/menus",
         element: <MenusPage />,
       },
       {
-        path: "/jmcw/gallery",
+        path: "/gallery",
         element: <GalleryPage />,
       },
       {
-        path: "/jmcw/about",
+        path: "/about",
         element: <AboutPage />,
       },
     ],

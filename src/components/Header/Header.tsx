@@ -33,10 +33,10 @@ type HeaderProps = {
 };
 
 const navLinks = [
-  { to: "/jmcw/", label: "Home" },
-  { to: "/jmcw/gallery", label: "Gallery" },
-  { to: "/jmcw/menus", label: "Sample Menus" },
-  { to: "/jmcw/about", label: "About" },
+  { to: "/", label: "Home" },
+  { to: "/gallery", label: "Gallery" },
+  { to: "/menus", label: "Sample Menus" },
+  { to: "/about", label: "About" },
 ];
 
 export default function Header({ blur = false }: HeaderProps) {
