@@ -59,8 +59,14 @@
 
 .dishGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: 1fr;
   gap: 2rem;
+}
+
+@media (--screen-xs) {
+  .dishGrid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .dishCard {

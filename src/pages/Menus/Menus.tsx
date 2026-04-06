@@ -26,51 +26,32 @@ type LazyImageProps = {
   src: string;
   className?: string;
   onClick?: () => void;
-  priority?: boolean;
+  shouldLoad: boolean;
 };
 
 const LazyImage = ({
   src,
   className,
   onClick,
-  priority = false,
+  shouldLoad,
 }: LazyImageProps) => {
-  const [loaded, setLoaded] = useState(priority);
+  const [loaded, setLoaded] = useState(false);
   const imgRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
-    if (priority) {
+    if (shouldLoad) {
       const img = new Image();
       img.src = src;
       img.onload = () => setLoaded(true);
-      return;
     }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          const img = new Image();
-          img.src = src;
-          img.onload = () => setLoaded(true);
-          observer.disconnect();
-        }
-      },
-      { rootMargin: "300px" },
-    );
-
-    if (imgRef.current) {
-      observer.observe(imgRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, [src, priority]);
+  }, [src, shouldLoad]);
 
   return (
     <img
       ref={imgRef}
       className={className}
       src={loaded ? src : undefined}
-      loading={priority ? "eager" : "lazy"}
+      loading={shouldLoad ? "eager" : "lazy"}
       decoding="async"
       onClick={onClick}
       style={{ opacity: loaded ? 1 : 0, transition: "opacity 0.3s ease" }}
@@ -113,13 +94,16 @@ export default function MenusPage() {
     label: string;
   } | null>(null);
   const [headerBlurred, setHeaderBlurred] = useState(false);
+  const [gridVisible, setGridVisible] = useState(false);
   const menuSectionRef = useRef<HTMLDivElement>(null);
   const heroGridRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
+  const dishGridRef = useRef<HTMLDivElement>(null);
 
   const handleMenuChange = (menu: Menus) => {
     setMenu(menu);
     setImageList(generateImageList(MenuMap[menu]));
+    setGridVisible(false);
     menuSectionRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -137,6 +121,24 @@ export default function MenusPage() {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setGridVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "300px" },
+    );
+
+    if (dishGridRef.current) {
+      observer.observe(dishGridRef.current);
+    }
+
+    return () => observer.disconnect();
   }, []);
 
   useLayoutEffect(() => {
@@ -300,7 +302,7 @@ export default function MenusPage() {
                 }
               />
             </Flex.Container>
-            <div className={styles.dishGrid}>
+            <div className={styles.dishGrid} ref={dishGridRef}>
               {imageList.map((image, index) => (
                 <Card
                   key={image}
@@ -310,13 +312,13 @@ export default function MenusPage() {
                     <LazyImage
                       src={image}
                       className={styles.dishCard}
+                      shouldLoad={gridVisible || index < 4}
                       onClick={() =>
                         setSelectedImage({
                           src: image,
                           label: `${menu} Dish ${index + 1}`,
                         })
                       }
-                      priority={index < 4}
                     />
                   }
                   onClick={() =>
