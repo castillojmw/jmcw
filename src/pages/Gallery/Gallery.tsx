@@ -25,15 +25,16 @@ const BRASSERIE_WEBP = import.meta.glob<ViteGlobModule>(
 );
 
 const generateImageList = (images: Record<string, ViteGlobModule>) => {
+  const isProd = import.meta.env.PROD;
   return Object.entries(images).map(([, mod]) => {
     const fileName = mod.default.split("/").at(-1);
     if (fileName) {
       const name = fileName.split(".webp")[0];
-      console.log({ name });
-      const nameWithSpaces = name
+      const parts = name.split("-");
+      const cleanName = isProd ? parts.slice(0, -1).join("-") : parts.join("-");
+      const nameWithSpaces = cleanName
         .replaceAll("-", " ")
-        .replaceAll(" , ", ", ")
-        .replace(/\d+/g, "");
+        .replaceAll(" , ", ", ");
 
       const formattedLabel = `${nameWithSpaces.charAt(0).toUpperCase()}${nameWithSpaces.slice(1)}`;
       return {
