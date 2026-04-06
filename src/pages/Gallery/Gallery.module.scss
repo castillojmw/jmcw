@@ -1,23 +1,16 @@
 .galleryContainer {
-  column-count: 1;
-  column-gap: 2rem;
+  display: flex;
+  margin-left: -2rem;
+  width: auto;
 }
 
-@media (--screen-xs) {
-  .galleryContainer {
-    column-count: 2;
-  }
-}
-
-@media (--screen-md) {
-  .galleryContainer {
-    column-count: 3;
-  }
+.galleryColumn {
+  padding-left: 2rem;
+  background-clip: padding-box;
 }
 
 .galleryCard {
   width: 100%;
-  object-fit: cover;
   display: block;
   margin-bottom: 2rem;
 }

@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react";
+import Masonry from "react-masonry-css";
 
 import Header from "../../components/Header/Header";
 import Footer from "../../components/core/Footer/Footer";
@@ -141,7 +142,11 @@ export default function GalleryPage() {
       </div>
 
       <section className={`${styles.gallerySection} section`}>
-        <div className={styles.galleryContainer}>
+        <Masonry
+          breakpointCols={{ default: 3, 768: 2, 480: 1 }}
+          className={styles.galleryContainer}
+          columnClassName={styles.galleryColumn}
+        >
           {imageList.map(({ src, label }, index) => (
             <Card
               key={src}
@@ -159,7 +164,7 @@ export default function GalleryPage() {
               maxWidth="100%"
             />
           ))}
-        </div>
+        </Masonry>
       </section>
 
       <ImageModal
