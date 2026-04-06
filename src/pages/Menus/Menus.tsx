@@ -22,6 +22,62 @@ import { ScrollTrigger } from "gsap/all";
 
 gsap.registerPlugin(ScrollTrigger);
 
+type LazyImageProps = {
+  src: string;
+  className?: string;
+  onClick?: () => void;
+  priority?: boolean;
+};
+
+const LazyImage = ({
+  src,
+  className,
+  onClick,
+  priority = false,
+}: LazyImageProps) => {
+  const [loaded, setLoaded] = useState(priority);
+  const imgRef = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    if (priority) {
+      const img = new Image();
+      img.src = src;
+      img.onload = () => setLoaded(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          const img = new Image();
+          img.src = src;
+          img.onload = () => setLoaded(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "300px" },
+    );
+
+    if (imgRef.current) {
+      observer.observe(imgRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [src, priority]);
+
+  return (
+    <img
+      ref={imgRef}
+      className={className}
+      src={loaded ? src : undefined}
+      loading={priority ? "eager" : "lazy"}
+      decoding="async"
+      onClick={onClick}
+      style={{ opacity: loaded ? 1 : 0, transition: "opacity 0.3s ease" }}
+    />
+  );
+};
+
 const KULTURA_IMAGES = import.meta.glob<ViteGlobModule>(
   "./assets/kultura/eg/*.jpg",
   {
@@ -251,10 +307,16 @@ export default function MenusPage() {
                   showLabelOnCard={false}
                   label={`${menu} Dish ${index + 1}`}
                   img={
-                    <img
-                      className={styles.dishCard}
+                    <LazyImage
                       src={image}
-                      loading="lazy"
+                      className={styles.dishCard}
+                      onClick={() =>
+                        setSelectedImage({
+                          src: image,
+                          label: `${menu} Dish ${index + 1}`,
+                        })
+                      }
+                      priority={index < 4}
                     />
                   }
                   onClick={() =>
