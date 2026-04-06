@@ -77,7 +77,14 @@ export const Card = (props: CardProps) => {
           <Typography.Body level={variant === "default" ? 1 : 3}>
             {label}
           </Typography.Body>
-          {props.desc && <p className={styles.cardDesc}>{props.desc}</p>}
+          {props.desc && (
+            <Typography.Body
+              className={styles.cardDesc}
+              level={variant === "default" ? 4 : 6}
+            >
+              {props.desc}
+            </Typography.Body>
+          )}
           {variant === "textbox" && extraContent}
         </Flex.Container>
       )}

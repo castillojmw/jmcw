@@ -103,16 +103,10 @@ export default function AboutPage() {
           extraContent={
             <Flex.Container
               style={{ paddingTop: "2rem" }}
-              direction="row"
-              justify="center"
-              gap="2rem"
+              className={styles.heroCtas}
             >
               <Button className={styles.button}>
-                <a
-                  href="/cv.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">
                   <Typography.Body level={5}>View my CV</Typography.Body>
                 </a>
               </Button>
