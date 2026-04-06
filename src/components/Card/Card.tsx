@@ -17,6 +17,7 @@ export type CardProps = {
   showLabelOnCard?: boolean;
   maxWidth?: string;
   style?: React.CSSProperties;
+  extraContent?: ReactNode;
 };
 
 export const Card = (props: CardProps) => {
@@ -29,6 +30,7 @@ export const Card = (props: CardProps) => {
     maxWidth = "400px",
     style,
     variant = "default",
+    extraContent,
   } = props;
 
   const ImageWrapper = onClick ? (
@@ -76,6 +78,7 @@ export const Card = (props: CardProps) => {
             {label}
           </Typography.Body>
           {props.desc && <p className={styles.cardDesc}>{props.desc}</p>}
+          {variant === "textbox" && extraContent}
         </Flex.Container>
       )}
       {props.to && (

@@ -2,6 +2,9 @@ import { useEffect, useCallback } from "react";
 import { createPortal } from "react-dom";
 
 import styles from "./ImageModal.module.scss";
+import { Card } from "../Card/Card";
+import { Typography } from "../core/Typography/Typography";
+import { Button } from "../Button/Button";
 
 export type ImageModalProps = {
   isOpen: boolean;
@@ -20,7 +23,7 @@ export const ImageModal = (props: ImageModalProps) => {
         onClose();
       }
     },
-    [onClose]
+    [onClose],
   );
 
   useEffect(() => {
@@ -44,41 +47,21 @@ export const ImageModal = (props: ImageModalProps) => {
       aria-modal="true"
       aria-label={label}
     >
-      <div
-        className={styles.content}
-        onClick={(e) => e.stopPropagation()}
-      >
-        <div className={styles.imageWrapper}>
-          <img
-            src={src}
-            alt={alt}
-            className={styles.image}
-          />
-        </div>
-        <div className={styles.footer}>
-          <p className={styles.label}>{label}</p>
-          <button
-            className={styles.closeButton}
-            onClick={onClose}
-            aria-label="Close modal"
-          >
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <line x1="18" y1="6" x2="6" y2="18" />
-              <line x1="6" y1="6" x2="18" y2="18" />
-            </svg>
-          </button>
-        </div>
+      <div className={styles.content} onClick={(e) => e.stopPropagation()}>
+        <Card
+          variant="textbox"
+          label={label}
+          img={<img src={src} alt={alt} className={styles.image} />}
+          extraContent={
+            <Button className={styles.closeButton} onClick={onClose}>
+              <Typography.Body underline level={6}>
+                Close
+              </Typography.Body>
+            </Button>
+          }
+        />
       </div>
     </div>,
-    document.body
+    document.body,
   );
 };
