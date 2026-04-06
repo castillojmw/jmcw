@@ -4,11 +4,14 @@ input[type="submit"],
 input[type="reset"] {
   cursor: pointer;
   border-radius: 2rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 0.6rem;
-  padding-bottom: 0.6rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.875rem;
+  padding-bottom: 0.875rem;
+  min-height: 44px;
+  min-width: 44px;
   border: none;
+  box-sizing: border-box;
 }
 
 .primaryButton {

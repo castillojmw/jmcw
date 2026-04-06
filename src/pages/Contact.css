@@ -114,9 +114,13 @@
   font-size: 0.9rem;
   text-decoration: none;
   transition: color 0.3s ease;
-  padding: 0.5rem 1rem;
+  padding: 0.875rem 1rem;
+  min-height: 44px;
   border: 1px solid #2a2a2a;
   border-radius: 2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .social-btn:hover {

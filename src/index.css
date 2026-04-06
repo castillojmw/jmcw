@@ -14,9 +14,11 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
 }
 p {
   margin: 0 0 1.5rem 0;
+  font-size: 1rem;
   color: #cfcfcf;
 }
 
@@ -31,12 +33,27 @@ a {
   padding: 0 2rem;
 }
 
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+}
+
 /* Utility */
 .text-center { text-align: center; }
 
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+}
+
+/* CSS Custom Properties */
+:root {
+  --color-text-primary: white;
+  --color-text-secondary: rgb(160, 160, 160);
+  --color-text-tertiary: #cfcfcf;
+  --color-content-primary: #1f1f1f;
+  --color-content-secondary: #7fa3a0;
 }
 
 
@@ -51,8 +68,27 @@ html {
   margin-bottom: 16rem;
 }
 
+@media (max-width: 480px) {
+  .section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-bottom: 8rem;
+  }
+}
+
 @custom-media --screen-xs (max-width: 480px);
 @custom-media --screen-sm (min-width: 768px);
 @custom-media --screen-md (max-width: 1000px);
 @custom-media --screen-lg (min-width: 1300px);
 @custom-media --screen-xl (min-width: 1560px);
+
+/* Safe area handling for fixed header */
+header,
+.header {
+  padding-top: env(safe-area-inset-top);
+}
+
+/* Full-viewport hero sections with safe area */
+.hero {
+  padding-bottom: env(safe-area-inset-bottom);
+}

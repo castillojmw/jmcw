@@ -95,6 +95,11 @@ export const Card = (props: CardProps) => {
             fontSize: "0.8rem",
             textDecoration: "underline",
             color: "white",
+            minHeight: "44px",
+            display: "inline-flex",
+            alignItems: "center",
+            paddingTop: "0.875rem",
+            paddingBottom: "0.875rem",
           }}
         >
           Find out more here
