@@ -52,6 +52,50 @@ const generateImageList = (images: Record<string, ViteGlobModule>) => {
 const NORMAL_IMAGE_LIST = generateImageList(NORMAL_IMAGES);
 const BRASSERIE_IMAGE_LIST = generateImageList(BRASSERIE_WEBP);
 
+type LazyImageProps = {
+  src: string;
+  className?: string;
+  onClick?: () => void;
+};
+
+const LazyImage = ({ src, className, onClick }: LazyImageProps) => {
+  const [loaded, setLoaded] = useState(false);
+  const imgRef = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          // Start loading when near viewport
+          const img = new Image();
+          img.src = src;
+          img.onload = () => setLoaded(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "300px" },
+    );
+
+    if (imgRef.current) {
+      observer.observe(imgRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [src]);
+
+  return (
+    <img
+      ref={imgRef}
+      className={className}
+      src={loaded ? src : undefined}
+      loading="lazy"
+      decoding="async"
+      onClick={onClick}
+      style={{ opacity: loaded ? 1 : 0, transition: "opacity 0.3s ease" }}
+    />
+  );
+};
+
 export default function GalleryPage() {
   const [selectedImage, setSelectedImage] = useState<{
     src: string;
@@ -95,11 +139,10 @@ export default function GalleryPage() {
               key={src}
               label={`Photo ${index + 1}`}
               img={
-                <img
-                  className={styles.galleryCard}
+                <LazyImage
                   src={src}
-                  loading="lazy"
-                  decoding="async"
+                  className={styles.galleryCard}
+                  onClick={() => setSelectedImage({ src, label })}
                 />
               }
               onClick={() => setSelectedImage({ src, label })}
