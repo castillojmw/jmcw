@@ -1,9 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/core/Footer/Footer";
 import "./About.css";
 import { Hero } from "../../sections/Hero/Hero";
+
+gsap.registerPlugin(ScrollToPlugin);
 
 import styles from "./About.module.scss";
 import { Flex } from "@/components/core/Flex/Flex";

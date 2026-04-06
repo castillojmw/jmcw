@@ -16,6 +16,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
+
 p {
   margin: 0 0 1.5rem 0;
   font-size: 1rem;
