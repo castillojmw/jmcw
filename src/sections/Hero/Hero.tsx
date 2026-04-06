@@ -6,8 +6,8 @@ import { BREAKPOINTS } from "../../utils/breakpoints";
 import { Typography } from "../../components/core/Typography/Typography";
 
 // Hero Assets
-import HERO_BACKGROUND_IMG from "./assets/hero.jpg";
-import HERO_BACKGROUND_IMG_MOBILE from "./assets/mobile-hero.jpg";
+import HERO_BACKGROUND_IMG from "./assets/hero.webp";
+import HERO_BACKGROUND_IMG_MOBILE from "./assets/mobile-hero.webp";
 
 type HeroProps = {
   heading?: string;
@@ -32,6 +32,9 @@ export const Hero = ({
         <Layered.Background className={styles.layerBackground}>
           <img
             src={isMobile ? HERO_BACKGROUND_IMG_MOBILE : HERO_BACKGROUND_IMG}
+            alt=""
+            loading="eager"
+            decoding="sync"
           />
         </Layered.Background>
         <Layered.Content className={styles.layerContent}>
