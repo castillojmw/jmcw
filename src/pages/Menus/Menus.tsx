@@ -89,7 +89,7 @@ export default function MenusPage() {
     label: string;
   } | null>(null);
   const [headerBlurred, setHeaderBlurred] = useState(false);
-  const [gridVisible, setGridVisible] = useState(false);
+  // const [gridVisible, setGridVisible] = useState(false);
   const menuSectionRef = useRef<HTMLDivElement>(null);
   const heroGridRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
@@ -98,7 +98,8 @@ export default function MenusPage() {
   const handleMenuChange = (menu: Menus) => {
     setMenu(menu);
     setImageList(generateImageList(MenuMap[menu]));
-    setGridVisible(false);
+    console.log(menu, generateImageList(MenuMap[menu]));
+    // setGridVisible(false);
     menuSectionRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -122,7 +123,7 @@ export default function MenusPage() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setGridVisible(true);
+          // setGridVisible(true);
           observer.disconnect();
         }
       },
@@ -307,7 +308,7 @@ export default function MenusPage() {
                   <LazyImage
                     src={image}
                     className={styles.dishCard}
-                    shouldLoad={gridVisible || index < 4}
+                    shouldLoad
                     onClick={() =>
                       setSelectedImage({
                         src: image,
