@@ -90,6 +90,11 @@
     "category": "brasserie"
   },
   {
+    "label": "Fruits de mer",
+    "src": "@/assets/BRASSERIE_WEBP/fruits-de-mer.webp",
+    "category": "brasserie"
+  },
+  {
     "label": "Aloo gobi",
     "src": "@/assets/NORMAL_WEBP/aloo-gobi-2.webp",
     "category": "normal"
@@ -602,6 +607,11 @@
   {
     "label": "Lobster crudo",
     "src": "@/assets/NORMAL_WEBP/lobster-crudo.webp",
+    "category": "normal"
+  },
+  {
+    "label": "Lobster crudo",
+    "src": "@/assets/NORMAL_WEBP/a-lobster-crudo.webp",
     "category": "normal"
   },
   {

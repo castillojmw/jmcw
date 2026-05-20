@@ -54,8 +54,6 @@ export default function GalleryPage() {
   const heroRef = useRef<HTMLDivElement>(null);
   const galleryRef = useRef<HTMLDivElement>(null);
 
-  console.log({ ALL_MEDIA });
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
